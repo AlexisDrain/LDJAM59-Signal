@@ -1,17 +1,28 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     /* Alexis Clay Drain */
+    public static bool visionPowerUp = false;
     public static bool startedGame = false;
+    public static int currentLevel = 1;
+
     public static PlayerInputAction playerInputAction;
     public static Pool pool_LoudAudioSource;
 
+    public static GameManager myGameManager;
+    public static Transform canvasWorld;
     public static GameObject startMenu;
     public static GameObject creditsMenu;
     public static Transform playerTrans;
     public static Camera mainCamera;
+
+    public static Transform trajectoryStarts;
+
+    public List<Transform> possibleGoalTargets = new List<Transform>();
+    public List<GameObject> levels = new List<GameObject>();
 
     void Awake() {
         GameObject.Find("Canvas/CreditsMenu/GameVersion").GetComponent<TextMeshProUGUI>().text = $"Version: {Application.version.ToString()}";
@@ -20,13 +31,16 @@ public class GameManager : MonoBehaviour
         pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
 
         Time.timeScale = 0f;
-
+        myGameManager = GetComponent<GameManager>();
+        canvasWorld = GameObject.Find("CanvasWorld").transform;
         startMenu = GameObject.Find("Canvas/StartMenu");
         creditsMenu = GameObject.Find("Canvas/CreditsMenu");
         creditsMenu.SetActive(false);
 
         playerTrans = GameObject.Find("Player").transform;
         mainCamera = GameObject.Find("MainCamera").GetComponent<Camera>();
+
+        trajectoryStarts = GameObject.Find("TrajectoryStarts").transform;
     }
 
     public void StartGame() {
@@ -34,6 +48,8 @@ public class GameManager : MonoBehaviour
         startedGame = true;
         startMenu.gameObject.SetActive(false);
         creditsMenu.gameObject.SetActive(false);
+
+        NewLevel(1);
     }
     public void PauseGame() {
         Time.timeScale = 0f;
@@ -46,7 +62,16 @@ public class GameManager : MonoBehaviour
         creditsMenu.gameObject.SetActive(false);
     }
 
-
+    public void NewLevel(int levelNum) {
+        if(levelNum == 1) {
+            // GameManager.visionPowerUp = true;
+        }
+        GameObject.Instantiate(levels[levelNum]);
+    }
+    public void FinishedLevel() {
+        currentLevel += 1;
+        NewLevel(currentLevel);
+    }
     public void Update() {
         if(GameManager.playerInputAction.Player.Pause.WasPressedThisFrame()) {
             if (startedGame == true) {

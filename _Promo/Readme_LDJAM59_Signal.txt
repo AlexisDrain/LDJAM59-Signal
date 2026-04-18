@@ -54,42 +54,15 @@ Halfquake 1 by Muddasheep https://store.steampowered.com/app/644320/Halfquake_Tr
 - UI buttons hover. Player injury sound. Explosions. Enemy attack charge. Crunchy sound effects:  
 BFXR https://www.bfxr.net/
 
-- Computer logs:
-Dialup.mp3 by Jlew -- https://freesound.org/s/16475/ -- License: Attribution 3.0
+- Ball Shoot
+Sonniss.com 2019 - Game Audio Bundle\TheWorkRoom Audio Post - Ball bounces\SB011.wav
+SoccerBallKick.wav by purchasing102 -- https://freesound.org/s/521825/ -- License: Creative Commons 0
 
-- Keycard pickup (Cat meow):
-Sonniss 2020 - Game Audio Bundle\Soundholder - Cat - Meow Library\animals cat blue meow 14 mono 96kHz.wav
-Sonniss 2020 - Game Audio Bundle\Soundholder - Cat - Meow Library\animals cat Fiona 63 meow mono 96kHz.wav
+- Drink / Gulp  
+Taking Large Gulps of Water by GemstoneProductions99 -- https://freesound.org/s/570876/ -- License: Creative Commons 0  
 
-- Flamethrower:
-Sonniss 2018 - Game Audio Bundle\SoundMorph - STEAMPUNK WEAPONS\Steampunk Weapons - Firestorm Flamer - set_1.wav
-
-- Grenade Launcher:
-Granade Launcher.wav by GreenFireSound -- https://freesound.org/s/484109/ -- License: Attribution 3.0
-
-- Explosion:
-Sonniss 2018 - Game Audio Bundle\Gamemaster Audio - Guns, Bullets and Explosions\explosion_large_07.wav
-
-- Weapon pickup:
-loy's gun bullet case in.wav by martian -- https://freesound.org/s/182261/ -- License: Creative Commons 0
-
-- Eyeball enemy bullet:
-Sonnis 2017 - Game Audio Bundle\Fascinated Sound - Scene Shop Tool Box\Impact Nail Gun 01 Single Shot Compressed Air and Action.wav
-
-- Machinegun:  
-Sonniss 2020 - Game Audio Bundle\Super Thump - Weapons of World War II - Designed\STDSGN_WoWW2_Wep_MG_M1919_Machinegun_Auto-Burst_Shot_X6.wav
-
-- Guns:
-Sonniss 2017 - Game Audio Bundle\Gamemaster Audio -  Gun Sound Pack\gun_revolver_pistol_shot_04.wav
-Sonnis 2020 - Game Audio Bundle\Super Thump - Weapons of World War II - Designed\STDSGN_WoWW2_Wep_MG_M1919_Machinegun_Auto-Burst_Shot_X6.wav
-Sonnis 2020 - Game Audio Bundle\Super Thump - Weapons of World War II - Designed\STDSGN_WoWW2_Wep_Pistol_Luger_Shot_X5.wav
-
-- Teleport:
-Sonniss 2023 - Game Audio Bundle\RYK-Sounds - Retro Game SFX\teleporting-sound 5.wav
-Sonniss 2023 - Game Audio Bundle\RYK-Sounds - Retro Game SFX\passive gain life-sound.wav
-
-- Dialogue Voices:  
-https://tntc-lab.itch.io/godot-voice-generator  
+- Crowd boo (score fail)
+Sonniss 2018 - Game Audio Bundle\Airborne Sound - Half & Half Sound FX Pack 1\Crowd,Bar  Pub,Male,Boo,Aww,Friendly Disappointment.wav
 
 === Texture ===
 

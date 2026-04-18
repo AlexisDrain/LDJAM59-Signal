@@ -1,22 +1,62 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     /* Alexis Clay Drain */
-
+    public static bool startedGame = false;
     public static PlayerInputAction playerInputAction;
     public static Pool pool_LoudAudioSource;
-    void Awake()
-    {
+
+    public static GameObject startMenu;
+    public static GameObject creditsMenu;
+
+    void Awake() {
+        GameObject.Find("Canvas/CreditsMenu/GameVersion").GetComponent<TextMeshProUGUI>().text = $"Version: {Application.version.ToString()}";
         playerInputAction = new PlayerInputAction();
         playerInputAction.Enable();
-
         pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
+
         Time.timeScale = 0f;
+
+        startMenu = GameObject.Find("Canvas/StartMenu");
+        creditsMenu = GameObject.Find("Canvas/CreditsMenu");
+        creditsMenu.SetActive(false);
+
     }
 
     public void StartGame() {
         Time.timeScale = 1f;
+        startedGame = true;
+        startMenu.gameObject.SetActive(false);
+        creditsMenu.gameObject.SetActive(false);
+    }
+    public void PauseGame() {
+        Time.timeScale = 0f;
+        startMenu.gameObject.SetActive(true);
+        creditsMenu.gameObject.SetActive(false);
+    }
+    public void ResumeGame() {
+        Time.timeScale = 1f;
+        startMenu.gameObject.SetActive(false);
+        creditsMenu.gameObject.SetActive(false);
+    }
+
+
+    public void Update() {
+        if(GameManager.playerInputAction.Player.Pause.WasPressedThisFrame()) {
+            if (startedGame == true) {
+                if (startMenu.activeSelf == true) {
+                    ResumeGame();
+                }
+                //else if(creditsMenu.activeSelf == true) {
+                //    PauseGame();
+                //}
+                else {
+                    PauseGame();
+                }
+            }
+        }
     }
 
     public static AudioSource SpawnLoudAudio(AudioClip newAudioClip, Vector2 pitch = new Vector2(), float newVolume = 1f) {

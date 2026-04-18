@@ -91,6 +91,10 @@ Sonniss 2023 - Game Audio Bundle\RYK-Sounds - Retro Game SFX\passive gain life-s
 - Dialogue Voices:  
 https://tntc-lab.itch.io/godot-voice-generator  
 
+=== Texture ===
+
+- Goal net  
+https://www.sketchuptextureclub.com/textures/architecture/tiles-interior/hexagonal-mixed/hexagonal-grey-marble-tile-texture-seamless-21415  
 
 === Code ===
 

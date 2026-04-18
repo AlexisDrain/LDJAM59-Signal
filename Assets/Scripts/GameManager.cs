@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public static GameObject startMenu;
     public static GameObject creditsMenu;
+    public static Transform playerTrans;
+    public static Camera mainCamera;
 
     void Awake() {
         GameObject.Find("Canvas/CreditsMenu/GameVersion").GetComponent<TextMeshProUGUI>().text = $"Version: {Application.version.ToString()}";
@@ -23,6 +25,8 @@ public class GameManager : MonoBehaviour
         creditsMenu = GameObject.Find("Canvas/CreditsMenu");
         creditsMenu.SetActive(false);
 
+        playerTrans = GameObject.Find("Player").transform;
+        mainCamera = GameObject.Find("MainCamera").GetComponent<Camera>();
     }
 
     public void StartGame() {

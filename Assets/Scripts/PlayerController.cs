@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update() {
         if(GameManager.playerInputAction.Player.Jump.WasPressedThisFrame()) {
-            myRigidbody.AddForce(Vector3.up * 10f, ForceMode.Force);
+            myRigidbody.AddForce(Vector3.up * 9f, ForceMode.Force);
         }
     }
     private void FixedUpdate() {

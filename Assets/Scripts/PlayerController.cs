@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate() {
 
-        if(myRigidbody.position.x <= -10f) {
+        if(myRigidbody.position.x < -10f) {
             myRigidbody.position = new Vector3(-10f, myRigidbody.position.y, myRigidbody.position.z);
         } else if (myRigidbody.position.x > 10f) {
             myRigidbody.position = new Vector3(10f, myRigidbody.position.y, myRigidbody.position.z);

@@ -38,7 +38,11 @@ No generative AI was used in the creation of this game.
 
 
 === Music ===  
+CRM Galaxy Dance FULL Loop by Peh Linde
+https://search.wowsound.com/track/61948783
 
+NCRS 03 DESCENDING AIR CURRENT FULL Loop by SOUND AIRYLUVS
+https://search.wowsound.com/track/61950680
 
 === SFX ===  
 - UI buttons click SFX  

@@ -50,7 +50,7 @@ public class BallStats : MonoBehaviour
 
         transform.parent.GetComponent<TrajectoryController>().EndShot();
 
-        mySprite.sortingOrder = -100;
+        mySprite.sortingOrder = -3;
         int idx = Random.Range(0, failSFX.Count);
         GameManager.SpawnLoudAudio(failSFX[idx], new Vector2(0.9f, 1.2f));
         //myAudioSource.clip = failSFX;

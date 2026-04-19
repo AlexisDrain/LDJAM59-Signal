@@ -14,6 +14,7 @@ public class BallStats : MonoBehaviour
     public float shootImpulse;
     public Transform target;
     public GameObject fadeSignalText;
+    public float backupKillGameObjectTimer = 15f;
 
     public SpriteRenderer mySprite;
     private bool scored = false;
@@ -92,6 +93,16 @@ public class BallStats : MonoBehaviour
         // myAudioSource.clip = deflectSFX;
         // myAudioSource.pitch = Random.Range(1.2f, 1.5f);
         // myAudioSource.PlayWebGL();
+    }
+
+    private bool backupKillGameObjectTimerActive = true;
+    private void FixedUpdate() {
+        if(backupKillGameObjectTimer > 0f && backupKillGameObjectTimerActive == true) {
+            backupKillGameObjectTimer -= Time.deltaTime;
+        } else {
+            backupKillGameObjectTimerActive = false;
+            StartCoroutine(DisapearCountdown());
+        }
     }
     private IEnumerator DisapearCountdown() {
 

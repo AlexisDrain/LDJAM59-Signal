@@ -30,61 +30,51 @@ Full credits + Source code:
 https://github.com/AlexisDrain/LDJAM59-Signal    
 
 
-=== Credits ===
-A game by Alexis Clay
-https://alexclay.itch.io/
+=== Credits ===  
+A game by Alexis Clay  
+https://alexclay.itch.io/  
 
-No generative AI was used in the creation of this game.
+No generative AI was used in the creation of this game.  
 
 
-=== Music ===
-- Spark by Johan Vandegriff. Free Music Archive (CC BY):  
-https://freemusicarchive.org/music/johan-vandegriff/0x07e7
+=== Music ===  
 
-- NCRS 03 DESCENDING AIR CURRENT FULL Loop  
-https://wowsound.com/our-music/tracks/ncrs-03-descending-air-current-full-loop.aspx  
 
-- (unused in final game) moonshine by Johan Vandegriff. Free Music Archive (CC BY):  
-https://freemusicarchive.org/music/johan-vandegriff/0x07e7
-
-=== SFX ===
-- UI buttons click SFX:
+=== SFX ===  
+- UI buttons click SFX  
 Halfquake 1 by Muddasheep https://store.steampowered.com/app/644320/Halfquake_Trilogy/ - Attribution-NonCommercial 3.0 Unported  
 
-- UI buttons hover. Player injury sound. Explosions. Enemy attack charge. Crunchy sound effects:  
+- UI buttons hover. Player jump. Crunchy sound effects  
 BFXR https://www.bfxr.net/
 
-- Ball Shoot
-Sonniss.com 2019 - Game Audio Bundle\TheWorkRoom Audio Post - Ball bounces\SB011.wav
-SoccerBallKick.wav by purchasing102 -- https://freesound.org/s/521825/ -- License: Creative Commons 0
+- Ball Shoot  
+Sonniss.com 2019 - Game Audio Bundle\TheWorkRoom Audio Post - Ball bounces\SB011.wav  
+SoccerBallKick.wav by purchasing102 -- https://freesound.org/s/521825/ -- License: Creative Commons 0  
 
 - Drink / Gulp  
 Taking Large Gulps of Water by GemstoneProductions99 -- https://freesound.org/s/570876/ -- License: Creative Commons 0  
 
-- Crowd boo (score fail)
-Sonniss 2018 - Game Audio Bundle\Airborne Sound - Half & Half Sound FX Pack 1\Crowd,Bar  Pub,Male,Boo,Aww,Friendly Disappointment.wav
+- Crowd boo (score fail)  
+Sonniss 2018 - Game Audio Bundle\Airborne Sound - Half & Half Sound FX Pack 1\Crowd,Bar  Pub,Male,Boo,Aww,Friendly Disappointment.wav  
 
 - Crowd cheer (level success)  
 Sonniss 2019 - Game Audio Bundle\2496SoundEffects - Surround at the Show 2 5.1 - Stereo\Crowd Cheering Interior, Female Crowd, Short Swell 24, Staples Arena Los Angeles  _5.1 LCRLsRsLf.wav  
 Sonniss 2019 - Game Audio Bundle\2496SoundEffects - Surround at the Show 2 5.1 - Stereo\Crowd Cheering Exterior, Political Rally Large, Medium Surge 1 _5.1 LCRLsRsLf.wav  
 Sonniss 2026 - Sonik Sound Library - Spanish Crowds\CRWDCheer_Small Club, 50 People, Crowd, Spanish, Cheering and Applause-Surround_KSL_KS015.wav  
 
-- Ball hit Post
-Sonniss.com 2024 - Game Audio Bundle\Mechanical Wave - Torturing Metal\METLImpt_Metal Impact-03_MWSFX_TM.wav
+- Ball hit Post  
+Sonniss.com 2024 - Game Audio Bundle\Mechanical Wave - Torturing Metal\METLImpt_Metal Impact-03_MWSFX_TM.wav  
 
-=== Texture ===
-
+=== Texture ===  
 - Goal net  
 https://www.sketchuptextureclub.com/textures/architecture/tiles-interior/hexagonal-mixed/hexagonal-grey-marble-tile-texture-seamless-21415  
 
-=== Code ===
+=== Code ===  
+- EdgeDetectionColor shader to draw white lines around 3d objects:  
+Unity Standard Assets: https://docs.unity3d.com/540/Documentation/Manual/script-EdgeDetectEffectNormals.html  
 
-- EdgeDetectionColor shader to draw white lines around 3d objects:
-Unity Standard Assets: https://docs.unity3d.com/540/Documentation/Manual/script-EdgeDetectEffectNormals.html
 
-
-=== Fonts ===
-
+=== Fonts ===  
 Micro Chat by VEXED (Pixel art font):  
 https://v3x3d.itch.io/micro-chat  
 

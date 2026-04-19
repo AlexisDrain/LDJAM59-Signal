@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public static GameObject startMenu;
     public static GameObject plotMenu;
     public static GameObject creditsMenu;
+    public static GameObject splashScreen;
     public static TextMeshProUGUI plotText;
     public static Transform playerTrans;
     public static Camera mainCamera;
@@ -46,6 +47,10 @@ public class GameManager : MonoBehaviour
         plotMenu.SetActive(false);
         creditsMenu = GameObject.Find("Canvas/CreditsMenu");
         creditsMenu.SetActive(false);
+        splashScreen = GameObject.Find("Canvas/SplashScreen");
+        if(splashScreen == null) {
+            Debug.LogError("Forgot to enable splash screen");
+        }
 
         playerTrans = GameObject.Find("Player").transform;
         mainCamera = GameObject.Find("MainCamera").GetComponent<Camera>();

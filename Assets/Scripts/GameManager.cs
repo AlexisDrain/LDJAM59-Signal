@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     /* Alexis Clay Drain */
     public static bool visionPowerUp = false;
     public static bool startedGame = false;
-    public static int currentLevel = 1;
+    public static int currentLevel = 0;
     public GameObject currentLevelInst;
 
     public static PlayerInputAction playerInputAction;
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         creditsMenu.gameObject.SetActive(false);
         plotMenu.gameObject.SetActive(true);
 
-        NewLevel(1);
+        NewLevel(0);
     }
     public void PauseGame() {
         Time.timeScale = 0f;
@@ -87,19 +87,18 @@ public class GameManager : MonoBehaviour
     public void NewLevel(int levelNum) {
         Time.timeScale = 0f;
 
-
         // reset settings
         tutorialBox.SetActive(false);
         graphicsPlayerArrow.SetActive(false);
         TogglePossiblePlayerGoalsVisuals(true);
         GameManager.visionPowerUp = false;
         // special settings
-        if (levelNum == 1) {
+        if (levelNum == 0) {
             tutorialBox.SetActive(true);
             graphicsPlayerArrow.SetActive(true);
             TogglePossiblePlayerGoalsVisuals(false);
         }
-        else if (levelNum == 2) {
+        else if (levelNum == 1) {
             graphicsPlayerArrow.SetActive(true);
         }
 

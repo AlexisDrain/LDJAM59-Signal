@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -83,15 +84,28 @@ public class GameManager : MonoBehaviour
             graphicsPlayerArrow.SetActive(false);
             GameManager.visionPowerUp = false;
         }
+
+        // TESTING
+        if(levelNum >= 2) {
+            levelNum = 2;
+        }
+
         currentLevelInst = GameObject.Instantiate(levels[levelNum]);
         plotMenu.SetActive(true);
         plotText.text = currentLevelInst.GetComponent<LevelProperties>().levelStory;
     }
     public void PlotButtonStart() {
-        Time.timeScale = 1f;
         startMenu.gameObject.SetActive(false);
         creditsMenu.gameObject.SetActive(false);
         plotMenu.gameObject.SetActive(false);
+
+        // this is to remove the jump SFX when player presses Start
+        StartCoroutine(StartLevelCountdown());
+    }
+    private IEnumerator StartLevelCountdown() {
+        // this is to remove the jump SFX when player presses Start
+        yield return new WaitForSecondsRealtime(0.1f);
+        Time.timeScale = 1f;
     }
     public void FinishedLevel() {
         Destroy(currentLevelInst);

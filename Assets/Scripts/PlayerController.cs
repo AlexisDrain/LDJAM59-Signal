@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody>();
     }
     private void Update() {
-        if(onGround && GameManager.playerInputAction.Player.Jump.WasPressedThisFrame()) {
+        if(onGround && GameManager.playerInputAction.Player.Jump.WasPressedThisFrame() && Time.timeScale >= 0.1f) {
             myRigidbody.AddForce(Vector3.up * jumpImpulse, ForceMode.Impulse);
             GameManager.SpawnLoudAudio(clipJump);
         }
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate() {
 
-        if(myRigidbody.position.x < -10f) {
+        if(myRigidbody.position.x <= -10f) {
             myRigidbody.position = new Vector3(-10f, myRigidbody.position.y, myRigidbody.position.z);
         } else if (myRigidbody.position.x > 10f) {
             myRigidbody.position = new Vector3(10f, myRigidbody.position.y, myRigidbody.position.z);

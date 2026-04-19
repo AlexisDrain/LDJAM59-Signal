@@ -104,6 +104,7 @@ public class BallStats : MonoBehaviour
         if(fadeSignalText) {
             Destroy(fadeSignalText);
         }
-        transform.parent.gameObject.SetActive(false);
+        Destroy(transform.parent.gameObject);
+        //transform.parent.gameObject.SetActive(false);
     }
 }

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static bool visionPowerUp = false;
     public static bool startedGame = false;
     public static int currentLevel = 1;
+    public GameObject currentLevelInst;
 
     public static PlayerInputAction playerInputAction;
     public static Pool pool_LoudAudioSource;
@@ -15,9 +16,12 @@ public class GameManager : MonoBehaviour
     public static GameManager myGameManager;
     public static Transform canvasWorld;
     public static GameObject startMenu;
+    public static GameObject plotMenu;
     public static GameObject creditsMenu;
+    public static TextMeshProUGUI plotText;
     public static Transform playerTrans;
     public static Camera mainCamera;
+    public static GameObject graphicsPlayerArrow;
 
     public static Transform trajectoryStarts;
 
@@ -34,20 +38,25 @@ public class GameManager : MonoBehaviour
         myGameManager = GetComponent<GameManager>();
         canvasWorld = GameObject.Find("CanvasWorld").transform;
         startMenu = GameObject.Find("Canvas/StartMenu");
+        plotText = GameObject.Find("Canvas/PlotMenu/PlotBox/Text (TMP)").GetComponent<TextMeshProUGUI>();
+        plotMenu = GameObject.Find("Canvas/PlotMenu");
+        plotMenu.SetActive(false);
         creditsMenu = GameObject.Find("Canvas/CreditsMenu");
         creditsMenu.SetActive(false);
 
         playerTrans = GameObject.Find("Player").transform;
         mainCamera = GameObject.Find("MainCamera").GetComponent<Camera>();
+        graphicsPlayerArrow = GameObject.Find("GraphicsPlayerArrow");
 
         trajectoryStarts = GameObject.Find("TrajectoryStarts").transform;
     }
 
     public void StartGame() {
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
         startedGame = true;
         startMenu.gameObject.SetActive(false);
         creditsMenu.gameObject.SetActive(false);
+        plotMenu.gameObject.SetActive(true);
 
         NewLevel(1);
     }
@@ -55,24 +64,46 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         startMenu.gameObject.SetActive(true);
         creditsMenu.gameObject.SetActive(false);
+        plotMenu.gameObject.SetActive(false);
     }
     public void ResumeGame() {
         Time.timeScale = 1f;
         startMenu.gameObject.SetActive(false);
         creditsMenu.gameObject.SetActive(false);
+        plotMenu.gameObject.SetActive(false);
     }
 
     public void NewLevel(int levelNum) {
         if(levelNum == 1) {
+            graphicsPlayerArrow.SetActive(true);
             // GameManager.visionPowerUp = true;
+        } else {
+            graphicsPlayerArrow.SetActive(false);
+            GameManager.visionPowerUp = false;
         }
-        GameObject.Instantiate(levels[levelNum]);
+        currentLevelInst = GameObject.Instantiate(levels[levelNum]);
+        plotMenu.SetActive(true);
+        plotText.text = currentLevelInst.GetComponent<LevelProperties>().levelStory;
+    }
+    public void PlotButtonStart() {
+        Time.timeScale = 1f;
+        startMenu.gameObject.SetActive(false);
+        creditsMenu.gameObject.SetActive(false);
+        plotMenu.gameObject.SetActive(false);
     }
     public void FinishedLevel() {
+        Destroy(currentLevelInst);
         currentLevel += 1;
         NewLevel(currentLevel);
     }
     public void Update() {
+        if(plotMenu.activeSelf) {
+            if(GameManager.playerInputAction.Player.PlotButtonStart.WasPressedThisFrame()) {
+                PlotButtonStart();
+            }
+            return;
+        }
+
         if(GameManager.playerInputAction.Player.Pause.WasPressedThisFrame()) {
             if (startedGame == true) {
                 if (startMenu.activeSelf == true) {

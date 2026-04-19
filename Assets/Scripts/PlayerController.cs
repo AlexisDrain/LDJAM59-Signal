@@ -31,6 +31,12 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate() {
 
+        if(myRigidbody.position.x < -10f) {
+            myRigidbody.position = new Vector3(-10f, myRigidbody.position.y, myRigidbody.position.z);
+        } else if (myRigidbody.position.x > 10f) {
+            myRigidbody.position = new Vector3(10f, myRigidbody.position.y, myRigidbody.position.z);
+        }
+
         RaycastHit hit;
         Physics.Linecast(transform.position + new Vector3(0f, 0.1f, 0f), transform.position + new Vector3(0f, -0.2f, 0f), out hit);
         if (hit.collider) {

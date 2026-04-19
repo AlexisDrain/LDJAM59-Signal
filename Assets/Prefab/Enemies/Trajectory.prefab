@@ -676,7 +676,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   shootSFX:
   - {fileID: 8300000, guid: 8a86d2a9e13dc99438743479bb640242, type: 3}
-  - {fileID: 8300000, guid: 47878f3531bd7e94f96623ee518c7f68, type: 3}
   deflectSFX: {fileID: 8300000, guid: 8a86d2a9e13dc99438743479bb640242, type: 3}
   goalPostSFX: {fileID: 8300000, guid: fe1b88f3cebf48d4d9ed1a0ed11d3735, type: 3}
   failSFX: {fileID: 8300000, guid: 825a310d1b2fc40419dd08576376f9d4, type: 3}

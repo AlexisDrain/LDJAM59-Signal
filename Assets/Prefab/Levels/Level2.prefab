@@ -49,10 +49,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57d8b50fd0e3eb4f9358e1ab1d941fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  levelStory: '<color=#00B4FF>Level 2/13</color>
+  levelStory: '<color=#00B4FF>Level 2/13 - For Real This Time</color>
 
 
-    Story 2222!'
+    Your
+    team, representing Humanity, has bribed the opponent team so they will signal
+    what shots they will take. But they must pretend to score the goal for insurance
+    purposes!'
 --- !u!114 &8687706038000022180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +126,10 @@ PrefabInstance:
       propertyPath: shootCountdown
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7382891435509362760, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1616
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -184,6 +191,14 @@ PrefabInstance:
     - target: {fileID: 5112342178906792310, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
       propertyPath: m_Name
       value: Trajectory (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843643717350048271, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
+      propertyPath: shootCountdown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7382891435509362760, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1616
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -247,9 +262,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trajectory (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5843643717350048271, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: shootCountdown
-      value: 4
+    - target: {fileID: 7382891435509362760, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1616
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -316,6 +331,10 @@ PrefabInstance:
     - target: {fileID: 5843643717350048271, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
       propertyPath: shootCountdown
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7382891435509362760, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1616
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

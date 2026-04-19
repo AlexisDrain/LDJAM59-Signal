@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public static GameObject plotMenu;
     public static GameObject creditsMenu;
     public static GameObject splashScreen;
+    public static GameObject tutorialBox;
     public static TextMeshProUGUI plotText;
     public static Transform playerTrans;
     public static Camera mainCamera;
@@ -51,6 +52,8 @@ public class GameManager : MonoBehaviour
         if(splashScreen == null) {
             Debug.LogError("Forgot to enable splash screen");
         }
+        tutorialBox = GameObject.Find("Canvas/GameMenu/TutorialBox");
+        tutorialBox.SetActive(false);
 
         playerTrans = GameObject.Find("Player").transform;
         mainCamera = GameObject.Find("MainCamera").GetComponent<Camera>();
@@ -84,12 +87,20 @@ public class GameManager : MonoBehaviour
     public void NewLevel(int levelNum) {
         Time.timeScale = 0f;
 
+
+        // reset settings
+        tutorialBox.SetActive(false);
+        graphicsPlayerArrow.SetActive(false);
+        TogglePossiblePlayerGoalsVisuals(true);
+        GameManager.visionPowerUp = false;
+        // special settings
         if (levelNum == 1) {
+            tutorialBox.SetActive(true);
             graphicsPlayerArrow.SetActive(true);
-            // GameManager.visionPowerUp = true;
-        } else {
-            graphicsPlayerArrow.SetActive(false);
-            GameManager.visionPowerUp = false;
+            TogglePossiblePlayerGoalsVisuals(false);
+        }
+        else if (levelNum == 2) {
+            graphicsPlayerArrow.SetActive(true);
         }
 
         // TESTING
@@ -121,6 +132,14 @@ public class GameManager : MonoBehaviour
         Destroy(currentLevelInst);
         currentLevel += 1;
         NewLevel(currentLevel);
+    }
+    private void TogglePossiblePlayerGoalsVisuals(bool newState) {
+        foreach (Transform trans in possibleGoalTargets) {
+            if (trans.GetComponent<SpriteRenderer>()) {
+                trans.GetComponent<SpriteRenderer>().enabled = newState;
+            }
+
+        }
     }
     public void Update() {
         if(plotMenu.activeSelf) {

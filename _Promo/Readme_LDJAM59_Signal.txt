@@ -1,30 +1,31 @@
 [Short Description]  
-Blast hordes of monsters using an unlimited amount of guns!
+Play dirty to win the soccer championship finals!  
 
 [Long Description]  
-Blast hordes of monsters using an unlimited amount of guns!
+Play dirty to win the soccer championship finals!  
+
+Can you block all the shots in this arcade-style soccer game? I hope you’re not colorblind! I tried my best to make the colors contrast but you should still be able to get by if so.  
+
+Made in 3 days for Ludum Dare 59 Jam. Theme: Signal  
 
 Full credits + Source code:  
 https://github.com/AlexisDrain/LDJAM59-Signal    
 
-LDJAM page:
-https://ldjam.com/events/ludum-dare/59/TODO  
-
-------
+LDJAM59 page: 
+https://ldjam.com/events/ludum-dare/59/99-Penality-Kicks  
 
 Controls:  
-- Move: WASD or Arrow keys.
-- Shoot: Left mouse click.
-- Talk: E.
-- Pause: Esc or P.
+Move - Left/right arrow keys or A/D  
+Jump - Space or up arrow. Hold to jump higher.  
+Pause - Escape or P  
 
 Notes:  
 - Performance is better on Chrome than Firefox.  
 - Performance is better with fullscreen disabled.  
 
-Have fun!!
+Have fun!!  
 
------------------------
+-----------------------  
 
 Full credits + Source code:  
 https://github.com/AlexisDrain/LDJAM59-Signal    

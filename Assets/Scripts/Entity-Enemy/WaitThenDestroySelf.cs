@@ -12,13 +12,14 @@ public class WaitThenDestroySelf : MonoBehaviour
     void Start() {
     }
     private void OnEnable() {
+        spawnGameObject.SetActive(false);
         StartCoroutine("Countdown");
     }
 
     public IEnumerator Countdown() {
         yield return new WaitForSeconds(timeToWait);
         spawnGameObject.transform.parent = transform.parent;
-        spawnGameObject.gameObject.SetActive(true);
+        spawnGameObject.SetActive(true);
         onTimeEnd.Invoke();
         yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);

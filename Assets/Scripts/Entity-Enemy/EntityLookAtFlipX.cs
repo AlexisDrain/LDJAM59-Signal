@@ -21,9 +21,9 @@ public class EntityLookAtFlipX : MonoBehaviour {
         if (targetIsPlayer == true) {
             targetTransform = GameManager.playerTrans;
         }
+        MainFunction();
     }
-
-    void LateUpdate() {
+    private void MainFunction() {
 
         if (directionRight == true && targetTransform.position.x < transform.position.x) {
             directionRight = false;
@@ -33,12 +33,15 @@ public class EntityLookAtFlipX : MonoBehaviour {
             directionRight = true;
             targetScaleX = 1f;
         }
-        if(instantAnimation == true) {
+        if (instantAnimation == true) {
             graphicalObject.localScale = new Vector3(targetScaleX, 1f, 1f);
         } else {
             currentScaleX = Mathf.Lerp(currentScaleX, targetScaleX, 8f * Time.deltaTime);
             graphicalObject.localScale = new Vector3(currentScaleX, 1f, 1f);
 
         }
+    }
+    void LateUpdate() {
+        MainFunction();
     }
 }

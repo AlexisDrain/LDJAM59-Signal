@@ -5,6 +5,7 @@ public class TriggerPlayerTouch : MonoBehaviour
 {
     /* Alexis Clay Drain */
     public UnityEvent onPlayerTouch;
+    public UnityEvent onPlayerTriggerTouch;
     public bool canBeReTriggered = false;
 
     private bool hasBeenTriggered = false;
@@ -20,6 +21,10 @@ public class TriggerPlayerTouch : MonoBehaviour
             hasBeenTriggered = true;
             onPlayerTouch.Invoke();
         }
+        if (collision.collider.CompareTag("PlayerTrigger")) {
+            hasBeenTriggered = true;
+            onPlayerTriggerTouch.Invoke();
+        }
     }
     private void OnTriggerEnter(Collider other) {
 
@@ -29,6 +34,10 @@ public class TriggerPlayerTouch : MonoBehaviour
         if (other.CompareTag("Player")) {
             hasBeenTriggered = true;
             onPlayerTouch.Invoke();
+        }
+        if (other.CompareTag("PlayerTrigger")) {
+            hasBeenTriggered = true;
+            onPlayerTriggerTouch.Invoke();
         }
     }
 }

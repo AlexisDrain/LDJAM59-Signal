@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 4607440916837921806}
   - component: {fileID: 4375856953437565995}
   - component: {fileID: 4143636254452362498}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 1358848944341064247}
   - component: {fileID: 3527158728136064810}
   - component: {fileID: 4480303275943368007}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 6027027958811213873}
   - component: {fileID: 5103001116461296453}
   - component: {fileID: 3264463270237600271}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ball
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -822,6 +822,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   onPlayerTouch:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerTriggerTouch:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6830026952919128681}

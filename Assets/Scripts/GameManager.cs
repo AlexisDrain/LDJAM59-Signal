@@ -74,7 +74,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void NewLevel(int levelNum) {
-        if(levelNum == 1) {
+        Time.timeScale = 0f;
+
+        if (levelNum == 1) {
             graphicsPlayerArrow.SetActive(true);
             // GameManager.visionPowerUp = true;
         } else {

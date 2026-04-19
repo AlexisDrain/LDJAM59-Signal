@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6758893740257963882}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -49,7 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57d8b50fd0e3eb4f9358e1ab1d941fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  levelStory: Story 2222!
+  levelStory: '<color=#00B4FF>Level 2/13</color>
+
+
+    Story 2222!'
 --- !u!114 &8687706038000022180
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class BallStats : MonoBehaviour
     public List<AudioClip> shootSFX = new List<AudioClip>();
     public AudioClip deflectSFX;
     public AudioClip goalPostSFX;
-    public AudioClip failSFX;
+    public List<AudioClip> failSFX = new List<AudioClip>();
     public float shootImpulse;
     public Transform target;
     public GameObject fadeSignalText;
@@ -51,7 +51,8 @@ public class BallStats : MonoBehaviour
         transform.parent.GetComponent<TrajectoryController>().EndShot();
 
         mySprite.sortingOrder = -100;
-        GameManager.SpawnLoudAudio(failSFX, new Vector2(0.9f, 1.2f));
+        int idx = Random.Range(0, failSFX.Count);
+        GameManager.SpawnLoudAudio(failSFX[idx], new Vector2(0.9f, 1.2f));
         //myAudioSource.clip = failSFX;
         //myAudioSource.pitch = Random.Range(0.9f, 1.2f);
         //myAudioSource.PlayWebGL();

@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -639735657, guid: fd144df12e8bdf0408126eb7f575c638, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -678,7 +678,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8a86d2a9e13dc99438743479bb640242, type: 3}
   deflectSFX: {fileID: 8300000, guid: 8a86d2a9e13dc99438743479bb640242, type: 3}
   goalPostSFX: {fileID: 8300000, guid: fe1b88f3cebf48d4d9ed1a0ed11d3735, type: 3}
-  failSFX: {fileID: 8300000, guid: 825a310d1b2fc40419dd08576376f9d4, type: 3}
+  failSFX:
+  - {fileID: 8300000, guid: 825a310d1b2fc40419dd08576376f9d4, type: 3}
+  - {fileID: 8300000, guid: cde45b200f6b6cc4c8f80a8ba3791ec4, type: 3}
   shootImpulse: 11
   target: {fileID: 1563153858994446729}
   fadeSignalText: {fileID: 0}

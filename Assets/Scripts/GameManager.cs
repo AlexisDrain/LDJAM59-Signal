@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
 
     public static Transform trajectoryStarts;
 
+    public List<AudioClip> crowdCheerStartGame = new List<AudioClip>();
+
     public List<Transform> possibleGoalTargets = new List<Transform>();
     public List<GameObject> levels = new List<GameObject>();
 
@@ -95,6 +97,9 @@ public class GameManager : MonoBehaviour
         plotText.text = currentLevelInst.GetComponent<LevelProperties>().levelStory;
     }
     public void PlotButtonStart() {
+        int idx = Random.Range(0, crowdCheerStartGame.Count);
+        GameManager.SpawnLoudAudio(crowdCheerStartGame[idx]);
+
         startMenu.gameObject.SetActive(false);
         creditsMenu.gameObject.SetActive(false);
         plotMenu.gameObject.SetActive(false);

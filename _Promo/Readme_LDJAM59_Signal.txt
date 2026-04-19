@@ -64,6 +64,11 @@ Taking Large Gulps of Water by GemstoneProductions99 -- https://freesound.org/s/
 - Crowd boo (score fail)
 Sonniss 2018 - Game Audio Bundle\Airborne Sound - Half & Half Sound FX Pack 1\Crowd,Bar  Pub,Male,Boo,Aww,Friendly Disappointment.wav
 
+- Crowd cheer (level success)  
+Sonniss 2019 - Game Audio Bundle\2496SoundEffects - Surround at the Show 2 5.1 - Stereo\Crowd Cheering Interior, Female Crowd, Short Swell 24, Staples Arena Los Angeles  _5.1 LCRLsRsLf.wav  
+Sonniss 2019 - Game Audio Bundle\2496SoundEffects - Surround at the Show 2 5.1 - Stereo\Crowd Cheering Exterior, Political Rally Large, Medium Surge 1 _5.1 LCRLsRsLf.wav  
+Sonniss 2026 - Sonik Sound Library - Spanish Crowds\CRWDCheer_Small Club, 50 People, Crowd, Spanish, Cheering and Applause-Surround_KSL_KS015.wav  
+
 - Ball hit Post
 Sonniss.com 2024 - Game Audio Bundle\Mechanical Wave - Torturing Metal\METLImpt_Metal Impact-03_MWSFX_TM.wav
 

@@ -11,6 +11,8 @@ public class TrajectoryController : MonoBehaviour
     public GameObject signalTextPrefab;
     public BallStats ball;
     public Transform targetReticle;
+    public SpriteRenderer humanSpriteRenderer;
+    public Sprite shotSprite;
     private GameObject textObj;
     public bool _hasShot = false;
     public bool _shotEnded = false;
@@ -42,6 +44,7 @@ public class TrajectoryController : MonoBehaviour
                 shootCountdown -= Time.deltaTime;
             } else {
                 _hasShot = true;
+                humanSpriteRenderer.sprite = shotSprite;
                 ball.ShootBall();
             }
 

@@ -2576,7 +2576,7 @@ GameObject:
   - component: {fileID: 315434432}
   m_Layer: 6
   m_Name: Cube (1)
-  m_TagString: Player
+  m_TagString: GoalPost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4573,7 +4573,7 @@ GameObject:
   - component: {fileID: 661057577}
   m_Layer: 6
   m_Name: Cube (2)
-  m_TagString: Player
+  m_TagString: GoalPost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5095,6 +5095,9 @@ MonoBehaviour:
   maxHorizontalVelocity: 10
   horizontalDrag: 0.85
   gravity: 20
+  footstepDistanceToSFX: 1.8
+  clipJump: {fileID: 8300000, guid: d9d3a8279b771fa46b58a877de0ab575, type: 3}
+  clipFootstep: {fileID: 8300000, guid: ca1dbd9bd2174f844b6436e55da439fa, type: 3}
 --- !u!54 &702855064
 Rigidbody:
   m_ObjectHideFlags: 0

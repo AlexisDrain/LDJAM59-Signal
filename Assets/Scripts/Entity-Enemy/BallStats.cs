@@ -9,6 +9,7 @@ public class BallStats : MonoBehaviour
     /* Alexis Clay Drain */
     public List<AudioClip> shootSFX = new List<AudioClip>();
     public AudioClip deflectSFX;
+    public AudioClip goalPostSFX;
     public AudioClip failSFX;
     public float shootImpulse;
     public Transform target;
@@ -55,6 +56,24 @@ public class BallStats : MonoBehaviour
         //myAudioSource.pitch = Random.Range(0.9f, 1.2f);
         //myAudioSource.PlayWebGL();
     }
+    public void BallHitGoalPost() {
+        if (scored) {
+            return;
+        }
+        Destroy(fadeSignalText);
+        mySphereCollider.enabled = false;
+        myRigidbody.linearVelocity = Vector3.zero;
+        myRigidbody.AddForce(-Vector3.forward * 4f, ForceMode.Impulse);
+
+        transform.parent.GetComponent<TrajectoryController>().EndShot();
+
+        StartCoroutine(DisapearCountdown());
+
+        GameManager.SpawnLoudAudio(goalPostSFX, new Vector2(0.9f, 1.2f));
+        // myAudioSource.clip = deflectSFX;
+        // myAudioSource.pitch = Random.Range(1.2f, 1.5f);
+        // myAudioSource.PlayWebGL();
+    }
     public void BallCaughtByPlayer() {
         if(scored) {
             return;
@@ -68,9 +87,10 @@ public class BallStats : MonoBehaviour
 
         StartCoroutine(DisapearCountdown());
 
-        myAudioSource.clip = deflectSFX;
-        myAudioSource.pitch = Random.Range(1.2f, 1.5f);
-        myAudioSource.PlayWebGL();
+        GameManager.SpawnLoudAudio(deflectSFX, new Vector2(0.9f, 1.2f));
+        // myAudioSource.clip = deflectSFX;
+        // myAudioSource.pitch = Random.Range(1.2f, 1.5f);
+        // myAudioSource.PlayWebGL();
     }
     private IEnumerator DisapearCountdown() {
 

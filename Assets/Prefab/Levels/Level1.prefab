@@ -91,22 +91,6 @@ PrefabInstance:
       propertyPath: shootCountdown
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 6830026952919128681, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: shootSFX.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6830026952919128681, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: 'shootSFX.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 8a86d2a9e13dc99438743479bb640242, type: 3}
-    - target: {fileID: 6830026952919128681, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: 'shootSFX.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 5abeec2cd51788e4d90504c9a57e1f3f, type: 3}
-    - target: {fileID: 7910354856858739852, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: shootCountdown
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -173,22 +157,6 @@ PrefabInstance:
       propertyPath: shootCountdown
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 6830026952919128681, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: shootSFX.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6830026952919128681, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: 'shootSFX.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 8a86d2a9e13dc99438743479bb640242, type: 3}
-    - target: {fileID: 6830026952919128681, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: 'shootSFX.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 5abeec2cd51788e4d90504c9a57e1f3f, type: 3}
-    - target: {fileID: 7910354856858739852, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: shootCountdown
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -250,26 +218,6 @@ PrefabInstance:
     - target: {fileID: 5112342178906792310, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
       propertyPath: m_Name
       value: Trajectory (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5843643717350048271, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: shootCountdown
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6830026952919128681, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: shootSFX.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6830026952919128681, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: 'shootSFX.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 8a86d2a9e13dc99438743479bb640242, type: 3}
-    - target: {fileID: 6830026952919128681, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: 'shootSFX.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 5abeec2cd51788e4d90504c9a57e1f3f, type: 3}
-    - target: {fileID: 7910354856858739852, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
-      propertyPath: shootCountdown
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -335,7 +283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5843643717350048271, guid: 2b1cc1dccfdbf3e47accf96ce3e939c1, type: 3}
       propertyPath: shootCountdown
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -6,7 +6,7 @@ public class PickRandomGoalTarget : MonoBehaviour
 {
     /* Alexis Clay Drain */
 
-
+    public float distanceColorOffset = 3f;
     private TrajectoryController trajectoryController;
     private SpriteRenderer mySprite;
     private float myAlpha = 1f;
@@ -26,7 +26,10 @@ public class PickRandomGoalTarget : MonoBehaviour
                 mySprite.color = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b, 1f);
             }
             else if (trajectoryController._hasShot == true) {
-                distance = Vector3.Distance(transform.position, trajectoryController.ball.transform.position);
+                distance = Vector3.Distance(transform.position, trajectoryController.ball.transform.position) - distanceColorOffset;
+                if(distance <= 0f) {
+                    distance = 0.001f;
+                }
                 myAlpha = Mathf.Clamp(1f / distance, 0f, 1f);
                 mySprite.color = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b, myAlpha);
             }

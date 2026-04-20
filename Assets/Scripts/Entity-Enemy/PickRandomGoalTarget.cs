@@ -12,12 +12,20 @@ public class PickRandomGoalTarget : MonoBehaviour
     public Transform trackedObject;
     private SpriteRenderer mySprite;
     private float myAlpha = 1f;
+    private bool alwaysShowAlpha = false;
     void Start()
     {
         trajectoryController = transform.parent.GetComponent<TrajectoryController>();
         hecklerController = transform.parent.GetComponent<HecklerController>();
         if(trajectoryController) {
-            trackedObject = trajectoryController.ball.transform;
+            if(trajectoryController.ball) {
+                trackedObject = trajectoryController.ball.transform;
+            } else if(trajectoryController.drink) {
+                alwaysShowAlpha = true;
+                trackedObject = trajectoryController.drink.transform;
+            } else {
+                print("Unknown thrown object type");
+            }
         }
         mySprite = GetComponent<SpriteRenderer>();
         mySprite.color = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b, 0f);
@@ -38,7 +46,8 @@ public class PickRandomGoalTarget : MonoBehaviour
         }
         if(_shotEnded == false) {
             if (_hasShot == true) {
-                if (GameManager.visionPowerUp == true || trackedObject == null) { // tackedObject is null in case of Bullet
+                if (GameManager.visionPowerUp == true || trackedObject == null || // tackedObject is null in case of Bullet/Heckler
+                    alwaysShowAlpha == true) {
                     mySprite.color = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b, 1f);
                 } else {
                     distance = Vector3.Distance(transform.position, trackedObject.position) - distanceColorOffset;

@@ -10,6 +10,7 @@ TagManager:
   - GoalPost
   - PlayerTrigger
   - Bullet
+  - Drink
   layers:
   - Default
   - TransparentFX

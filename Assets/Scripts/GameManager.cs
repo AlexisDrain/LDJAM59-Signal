@@ -98,7 +98,15 @@ public class GameManager : MonoBehaviour
         creditsMenu.gameObject.SetActive(false);
         plotMenu.gameObject.SetActive(false);
     }
-
+    public void ToggleDrinkPowerUp(bool newState) {
+        if(newState == true) {
+            GameManager.energyPowerUp = true;
+            GameManager.playerTrans.GetComponent<PlayerController>().SetTrailColor(Color.green);
+        } else {
+            GameManager.energyPowerUp = false;
+            GameManager.playerTrans.GetComponent<PlayerController>().SetTrailColor(Color.white);
+        }
+    }
     public void NewLevel(int levelNum) {
         Time.timeScale = 0f;
 
@@ -107,13 +115,10 @@ public class GameManager : MonoBehaviour
         graphicsPlayerArrow.SetActive(false); // enable for tutorial
         TogglePossiblePlayerGoalsVisuals(true); // disable for tutorial, or for hard levels
         GameManager.visionPowerUp = false;
-        GameManager.energyPowerUp = false;
-        GameManager.playerTrans.GetComponent<PlayerController>().SetTrailColor(Color.white);
+        GameManager.myGameManager.ToggleDrinkPowerUp(false);
         // special settings
         if (levelNum == 0) {
 
-            GameManager.energyPowerUp = true;
-            GameManager.playerTrans.GetComponent<PlayerController>().SetTrailColor(Color.green);
             print("testing game! remember to uncomment these 3 lines!");
             //tutorialBox.SetActive(true);
             //graphicsPlayerArrow.SetActive(true);

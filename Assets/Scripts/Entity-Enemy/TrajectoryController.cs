@@ -10,28 +10,40 @@ public class TrajectoryController : MonoBehaviour
     [Header("Set once")]
     public GameObject signalTextPrefab;
     public BallStats ball;
+    public DrinkStats drink;
     public Transform targetReticle;
     public SpriteRenderer humanSpriteRenderer;
     public Sprite shotSprite;
     private GameObject textObj;
+    public bool redShirt = false;
     public bool _hasShot = false;
     public bool _shotEnded = false;
     void Start() {
-        textObj = GameObject.Instantiate(signalTextPrefab, GameManager.canvasWorld);
-        textObj.GetComponent<FadeSignalText>().targetTrans = targetReticle;
-        textObj.GetComponent<FollowObject>().targetTrans = ball.transform;
-        ball.fadeSignalText = textObj;
+        if(ball) {
+            textObj = GameObject.Instantiate(signalTextPrefab, GameManager.canvasWorld);
+            textObj.GetComponent<FadeSignalText>().targetTrans = targetReticle;
+            textObj.GetComponent<FollowObject>().targetTrans = ball.transform;
+            ball.fadeSignalText = textObj;
+        }
 
         int randomIndex = Random.Range(0, GameManager.myGameManager.possibleGoalTargets.Count);
         Vector3 randomizedOffset = new Vector3(Random.Range(-0.9f, 0.9f), Random.Range(-0.9f, 0.9f), 0f);
         Transform square = GameManager.myGameManager.possibleGoalTargets[randomIndex];
 
+        if(redShirt) {
+            List<Transform> reversedList = new List<Transform>(GameManager.myGameManager.possibleGoalTargets);
+            reversedList.Reverse();
+            square = reversedList[randomIndex];
+        }
+
         targetReticle.position = square.position + randomizedOffset;
 
-        textObj.GetComponent<TextMeshProUGUI>().text = square.GetComponent<SquareProperties>().squareName;
-        Color newColor = square.GetComponent<SquareProperties>().squareColor;
-        newColor.a = 1f;
-        textObj.GetComponent<TextMeshProUGUI>().color = newColor;
+        if(textObj) {
+            textObj.GetComponent<TextMeshProUGUI>().text = square.GetComponent<SquareProperties>().squareName;
+            Color newColor = square.GetComponent<SquareProperties>().squareColor;
+            newColor.a = 1f;
+            textObj.GetComponent<TextMeshProUGUI>().color = newColor;
+        }
 
         _hasShot = false;
     }
@@ -45,7 +57,12 @@ public class TrajectoryController : MonoBehaviour
             } else {
                 _hasShot = true;
                 humanSpriteRenderer.sprite = shotSprite;
-                ball.ShootBall();
+                if(ball) {
+                    ball.ShootBall();
+                }
+                else if (drink) {
+                    drink.ShootDrink();
+                }
             }
 
         }

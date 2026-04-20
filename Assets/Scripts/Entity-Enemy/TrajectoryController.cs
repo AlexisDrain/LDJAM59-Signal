@@ -56,7 +56,7 @@ public class TrajectoryController : MonoBehaviour
         targetReticle.position = square.position + randomizedOffset;
 
         if (reverseShots == true) { // reverse shown shot.
-            square = GameManager.myGameManager.possibleGoalTargets[^(randomIndex+1)]; // ^ hat is a reverse index operator. 1-indexed
+            square = GameManager.myGameManager.possibleGoalTargets[maxPossibleGoalTarget - randomIndex - 1];
             //List<Transform> reversedList = new List<Transform>(GameManager.myGameManager.possibleGoalTargets);
             //reversedList.Reverse();
             //square = reversedList[randomIndex];
@@ -65,6 +65,9 @@ public class TrajectoryController : MonoBehaviour
 
         if(textObj) {
             textObj.GetComponent<TextMeshProUGUI>().text = square.GetComponent<SquareProperties>().squareName;
+            if(reverseShots == true) {
+                textObj.GetComponent<TextMeshProUGUI>().text = "!" + textObj.GetComponent<TextMeshProUGUI>().text;
+            }
             Color newColor = square.GetComponent<SquareProperties>().squareColor;
             newColor.a = 1f;
             if(redText == true) {

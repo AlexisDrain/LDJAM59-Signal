@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1333579239151273377}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.9149997, y: 0, z: 0}
+  m_LocalPosition: {x: 5.415, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76,7 +76,7 @@ Transform:
   m_GameObject: {fileID: 1336066222526652565}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9149999, y: 0, z: 0}
+  m_LocalPosition: {x: 1.415, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -126,7 +126,7 @@ Transform:
   m_GameObject: {fileID: 1431561272133659693}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.415, y: 0, z: 0}
+  m_LocalPosition: {x: 3.4149997, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -176,7 +176,7 @@ Transform:
   m_GameObject: {fileID: 1558226561182430194}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.085, y: 0, z: 0}
+  m_LocalPosition: {x: -2.585, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -226,7 +226,7 @@ Transform:
   m_GameObject: {fileID: 1632797707429534052}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9149999, y: 0, z: 0}
+  m_LocalPosition: {x: 1.165, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -276,7 +276,7 @@ Transform:
   m_GameObject: {fileID: 2293299984354511842}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.085, y: 0, z: 0}
+  m_LocalPosition: {x: -2.585, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -326,7 +326,7 @@ Transform:
   m_GameObject: {fileID: 2732748154259981660}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.37, y: 0, z: 0}
+  m_LocalPosition: {x: -0.83500016, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -426,7 +426,7 @@ Transform:
   m_GameObject: {fileID: 3745785661621283412}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.415, y: 0, z: 0}
+  m_LocalPosition: {x: 3.4149997, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -476,7 +476,7 @@ Transform:
   m_GameObject: {fileID: 4045977003825243424}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.9149997, y: 0, z: 0}
+  m_LocalPosition: {x: 5.165, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -526,7 +526,7 @@ Transform:
   m_GameObject: {fileID: 6108919419027235926}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.415, y: 0, z: 0}
+  m_LocalPosition: {x: 2.9149997, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -626,7 +626,7 @@ Transform:
   m_GameObject: {fileID: 6842811234489839302}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5425, y: 0, z: 0}
+  m_LocalPosition: {x: -2.835, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -726,7 +726,7 @@ Transform:
   m_GameObject: {fileID: 7454473780027706999}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.9149997, y: 0, z: 0}
+  m_LocalPosition: {x: 5.415, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -823,6 +823,9 @@ MonoBehaviour:
     it''s live! Instead, a decoy <color=red>red-shirt players</color> have subbed
     in, and they will do the OPPOSITE X and Y coordinates of the signals! So B3 becomes
     A3, and A1 becomes B5, etc.'
+  tallLevel: 0
+  tutorialDoubleJump: 0
+  removeColorGrid: 0
 --- !u!114 &879015770051809607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,7 +1339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8666430023312511656, guid: d9962345b5adfdb48a7535b073e947c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.9463701
+      value: 4.1963696
       objectReference: {fileID: 0}
     - target: {fileID: 8666430023312511656, guid: d9962345b5adfdb48a7535b073e947c4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1418,7 +1421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8666430023312511656, guid: d9962345b5adfdb48a7535b073e947c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5536299
+      value: -1.0536299
       objectReference: {fileID: 0}
     - target: {fileID: 8666430023312511656, guid: d9962345b5adfdb48a7535b073e947c4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1670,7 +1673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8666430023312511656, guid: d9962345b5adfdb48a7535b073e947c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.0111299
+      value: -3.0536299
       objectReference: {fileID: 0}
     - target: {fileID: 8666430023312511656, guid: d9962345b5adfdb48a7535b073e947c4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2179,7 +2182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8666430023312511656, guid: d9962345b5adfdb48a7535b073e947c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4463701
+      value: 1.1963701
       objectReference: {fileID: 0}
     - target: {fileID: 8666430023312511656, guid: d9962345b5adfdb48a7535b073e947c4, type: 3}
       propertyPath: m_LocalPosition.y

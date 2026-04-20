@@ -12,7 +12,7 @@ Full credits + Source code:
 https://github.com/AlexisDrain/LDJAM59-Signal    
 
 LDJAM59 page: 
-https://ldjam.com/events/ludum-dare/59/99-Penality-Kicks  
+https://ldjam.com/events/ludum-dare/59/99-Penalty-Kicks  
 
 Controls:  
 Move - Left/right arrow keys or A/D  

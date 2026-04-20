@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 1994849796183873564}
   - component: {fileID: 7854571877349015227}
   m_Layer: 0
-  m_Name: Level3
+  m_Name: Level3-Shootout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
 
     Some <color=red>extreme
     hecklers</color> from a betting market are trying to make the other team win
-    in any means necessary! They will gun you down!'
+    by any means necessary! They will gun you down!'
 --- !u!114 &7854571877349015227
 MonoBehaviour:
   m_ObjectHideFlags: 0

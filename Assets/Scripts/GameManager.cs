@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
 {
     /* Alexis Clay Drain */
     public static bool visionPowerUp = false;
+    public static bool energyPowerUp = false;
     public static bool startedGame = false;
     public static int currentLevel = 0;
     public static int currentHealth = 5;
     public GameObject currentLevelInst;
 
+    public static LayerMask layerMask_Floor;
     public static UnityEvent levelEndEvent = new UnityEvent();
 
     public static PlayerInputAction playerInputAction;
@@ -41,7 +43,12 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Canvas/CreditsMenu/GameVersion").GetComponent<TextMeshProUGUI>().text = $"Version: {Application.version.ToString()}";
         playerInputAction = new PlayerInputAction();
         playerInputAction.Enable();
+
+        layerMask_Floor = LayerMask.NameToLayer("Floor");
+
         pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
+
+
 
         Time.timeScale = 0f;
         myGameManager = GetComponent<GameManager>();
@@ -100,11 +107,17 @@ public class GameManager : MonoBehaviour
         graphicsPlayerArrow.SetActive(false); // enable for tutorial
         TogglePossiblePlayerGoalsVisuals(true); // disable for tutorial, or for hard levels
         GameManager.visionPowerUp = false;
+        GameManager.energyPowerUp = false;
+        GameManager.playerTrans.GetComponent<PlayerController>().SetTrailColor(Color.white);
         // special settings
         if (levelNum == 0) {
-            tutorialBox.SetActive(true);
-            graphicsPlayerArrow.SetActive(true);
-            TogglePossiblePlayerGoalsVisuals(false);
+
+            GameManager.energyPowerUp = true;
+            GameManager.playerTrans.GetComponent<PlayerController>().SetTrailColor(Color.green);
+            print("testing game! remember to uncomment these 3 lines!");
+            //tutorialBox.SetActive(true);
+            //graphicsPlayerArrow.SetActive(true);
+            //TogglePossiblePlayerGoalsVisuals(false);
         }
         else if (levelNum == 1) {
             graphicsPlayerArrow.SetActive(true);

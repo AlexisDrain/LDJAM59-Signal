@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     /* Alexis Clay Drain */
     public AudioClip loseHealthSFX;
-    public AudioClip loseGoalSFX;
+    // public AudioClip loseGoalSFX;
     public List<Image> sprites = new List<Image>();
     public Sprite heartYes;
     public Sprite heartNo;

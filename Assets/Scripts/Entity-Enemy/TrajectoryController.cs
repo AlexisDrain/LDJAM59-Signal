@@ -7,6 +7,7 @@ public class TrajectoryController : MonoBehaviour
     /* Alexis Clay Drain */
 
     public float shootCountdown = 3f;
+    public int indexToShootAt = -1;
     [Header("Set once")]
     public GameObject signalTextPrefab;
     public BallStats ball;
@@ -15,7 +16,10 @@ public class TrajectoryController : MonoBehaviour
     public SpriteRenderer humanSpriteRenderer;
     public Sprite shotSprite;
     private GameObject textObj;
-    public bool redShirt = false;
+    public bool reverseShots = false;
+    public bool showText = true; // green enemy doesn't showText
+    public bool onlyBottomRow = false;
+    [Header("read only")]
     public bool _hasShot = false;
     public bool _shotEnded = false;
     void Start() {
@@ -27,10 +31,16 @@ public class TrajectoryController : MonoBehaviour
         }
 
         int randomIndex = Random.Range(0, GameManager.myGameManager.possibleGoalTargets.Count);
+        if(onlyBottomRow) {
+            randomIndex = Random.Range(5, GameManager.myGameManager.possibleGoalTargets.Count);
+        }
+        if(indexToShootAt != -1) {
+            randomIndex = indexToShootAt;
+        }
         Vector3 randomizedOffset = new Vector3(Random.Range(-0.9f, 0.9f), Random.Range(-0.9f, 0.9f), 0f);
         Transform square = GameManager.myGameManager.possibleGoalTargets[randomIndex];
 
-        if(redShirt) {
+        if(reverseShots == true) {
             List<Transform> reversedList = new List<Transform>(GameManager.myGameManager.possibleGoalTargets);
             reversedList.Reverse();
             square = reversedList[randomIndex];
@@ -43,6 +53,9 @@ public class TrajectoryController : MonoBehaviour
             Color newColor = square.GetComponent<SquareProperties>().squareColor;
             newColor.a = 1f;
             textObj.GetComponent<TextMeshProUGUI>().color = newColor;
+            if(showText == false) {
+                textObj.GetComponent<TextMeshProUGUI>().text = "";
+            }
         }
 
         _hasShot = false;

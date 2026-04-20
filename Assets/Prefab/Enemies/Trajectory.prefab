@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   distanceColorOffset: 4
+  trackedObject: {fileID: 0}
 --- !u!1 &2822361567598391172
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +117,7 @@ GameObject:
   - component: {fileID: 4607440916837921806}
   - component: {fileID: 4375856953437565995}
   - component: {fileID: 4143636254452362498}
+  - component: {fileID: 9144495837264949579}
   m_Layer: 8
   m_Name: Graphics
   m_TagString: Untagged
@@ -209,6 +211,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18f0fce560c5ee46bc0cd8525a53136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityBillboard
+--- !u!114 &9144495837264949579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822361567598391172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec08479b9bda5cc46a0934a613269d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeInSprite
 --- !u!1 &5112342178906792310
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,11 +271,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   shootCountdown: 4
+  indexToShootAt: -1
   signalTextPrefab: {fileID: 297746058401453866, guid: c5dda838c6eaf9c408d2872556038dd4, type: 3}
   ball: {fileID: 6830026952919128681}
+  drink: {fileID: 0}
   targetReticle: {fileID: 1563153858994446729}
   humanSpriteRenderer: {fileID: 4863902606833227245}
   shotSprite: {fileID: 1081160775, guid: fd144df12e8bdf0408126eb7f575c638, type: 3}
+  reverseShots: 0
+  showText: 1
+  onlyBottomRow: 0
   _hasShot: 0
   _shotEnded: 0
 --- !u!1 &5618701172239997162
@@ -2862,6 +2881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 919293101534627196}
   - component: {fileID: 4863902606833227245}
+  - component: {fileID: 2141286037381385585}
   m_Layer: 0
   m_Name: EnemyGraphics (1)
   m_TagString: Untagged
@@ -2944,6 +2964,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2141286037381385585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6368752981440309634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec08479b9bda5cc46a0934a613269d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &8224291338099818712
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,6 +2987,7 @@ GameObject:
   - component: {fileID: 1358848944341064247}
   - component: {fileID: 3527158728136064810}
   - component: {fileID: 4480303275943368007}
+  - component: {fileID: 71994482529562760}
   m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
@@ -3049,6 +3082,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   maxSize: 0.8
+--- !u!114 &71994482529562760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8224291338099818712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec08479b9bda5cc46a0934a613269d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeInSprite
 --- !u!1 &8296090601201297713
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,6 +3104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3802160156352557592}
   - component: {fileID: 343888792958343745}
+  - component: {fileID: 6799709207307651961}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -3140,6 +3186,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &6799709207307651961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296090601201297713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec08479b9bda5cc46a0934a613269d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &9165900893820658947
 GameObject:
   m_ObjectHideFlags: 0
@@ -3379,7 +3437,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  canBeReTriggered: 0
+  onGoalPostTouch:
+    m_PersistentCalls:
+      m_Calls: []
+  onGoalTouch:
+    m_PersistentCalls:
+      m_Calls: []
+  onTouchOther:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3264463270237600271
 MonoBehaviour:
   m_ObjectHideFlags: 0

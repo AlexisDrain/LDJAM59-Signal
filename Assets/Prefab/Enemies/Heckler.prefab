@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 7288050073300830274}
   - component: {fileID: 5752146320098038997}
   - component: {fileID: 6788989770568195238}
+  - component: {fileID: 6080377938654118725}
   m_Layer: 0
   m_Name: EnemyGun
   m_TagString: Untagged
@@ -217,6 +218,18 @@ MonoBehaviour:
   flipYWhenOnLeftSide: 1
   targetTransform: {fileID: 605178012895791460}
   spriteRenderer: {fileID: 5752146320098038997}
+--- !u!114 &6080377938654118725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606289987279425796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec08479b9bda5cc46a0934a613269d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeInSprite
 --- !u!1 &5022970448881074543
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1231323426016374161}
   - component: {fileID: 6798038174561402112}
+  - component: {fileID: 114562196274141521}
   m_Layer: 0
   m_Name: EnemyGraphics (1)
   m_TagString: Untagged
@@ -309,6 +323,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &114562196274141521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5022970448881074543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec08479b9bda5cc46a0934a613269d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeInSprite
 --- !u!1 &5338868739099590600
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2960143211012250357}
   - component: {fileID: 1806729723135914668}
+  - component: {fileID: 840190797721837325}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -637,3 +664,15 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &840190797721837325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7995811727946908124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec08479b9bda5cc46a0934a613269d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeInSprite

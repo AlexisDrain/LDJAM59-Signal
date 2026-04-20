@@ -104,8 +104,8 @@ MonoBehaviour:
 
 
     Your
-    team has bribed the opponent team so they will signal what shots they will take.
-    But they must pretend to score the goal for insurance purposes!'
+    team has bribed the opponent team so they will "signal" what shots they will
+    take. But they must pretend to score the goal for insurance purposes!'
 --- !u!114 &6014008189927823016
 MonoBehaviour:
   m_ObjectHideFlags: 0

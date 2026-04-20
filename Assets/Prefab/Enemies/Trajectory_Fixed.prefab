@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6895751138724867300}
   - component: {fileID: 1221408649585671285}
+  - component: {fileID: 1907484692992986837}
   m_Layer: 0
   m_Name: EnemyGraphics (1)
   m_TagString: Untagged
@@ -92,6 +93,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1907484692992986837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797425220631986202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec08479b9bda5cc46a0934a613269d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeInSprite
 --- !u!1 &1549780556629985518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,6 +2763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7471649425560509312}
   - component: {fileID: 6320485544648618969}
+  - component: {fileID: 8072915003905324577}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -2831,6 +2845,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &8072915003905324577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329204774870696105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec08479b9bda5cc46a0934a613269d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeInSprite
 --- !u!1 &2400929261365209408
 GameObject:
   m_ObjectHideFlags: 0
@@ -2842,6 +2868,7 @@ GameObject:
   - component: {fileID: 4731248007052112815}
   - component: {fileID: 7170189345296963250}
   - component: {fileID: 7880843063774362847}
+  - component: {fileID: 5999361867370409918}
   m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
@@ -2936,6 +2963,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   maxSize: 0.8
+--- !u!114 &5999361867370409918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400929261365209408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec08479b9bda5cc46a0934a613269d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeInSprite
 --- !u!1 &3188706145721978011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3329,6 +3368,7 @@ GameObject:
   - component: {fileID: 7819293552813923734}
   - component: {fileID: 8055100952972172723}
   - component: {fileID: 7706356244521452698}
+  - component: {fileID: 2360620337553175175}
   m_Layer: 8
   m_Name: Graphics
   m_TagString: Untagged
@@ -3422,3 +3462,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18f0fce560c5ee46bc0cd8525a53136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityBillboard
+--- !u!114 &2360620337553175175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8383547398851003932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec08479b9bda5cc46a0934a613269d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeInSprite

@@ -11978,6 +11978,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  notTallLevelEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 330585548}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: SetNewCameraDestination
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 251484534}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   crowdCheerStartGame:
   - {fileID: 8300000, guid: c6d2046a4bf47cf40b0a0aceaa477833, type: 3}
   possibleGoalTargets:

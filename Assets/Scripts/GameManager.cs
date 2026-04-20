@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public static LayerMask layerMask_Floor;
     public static UnityEvent levelEndEvent = new UnityEvent();
     public UnityEvent tallLevelEvent = new UnityEvent();
+    public UnityEvent notTallLevelEvent = new UnityEvent();
 
     public static PlayerInputAction playerInputAction;
     public static Pool pool_LoudAudioSource;
@@ -129,6 +130,7 @@ public class GameManager : MonoBehaviour
         } else {
             GameManager.tallLevel = false;
             goalTrans.position = new Vector3(goalTrans.position.x, 0, goalTrans.position.z);
+            notTallLevelEvent.Invoke();
         }
     }
     public void NewLevel(int levelNum) {

@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour
     public static bool visionPowerUp = false;
     public static bool energyPowerUp = false;
     public static bool startedGame = false;
+    public static bool tallLevel = false;
     public static int currentLevel = 0;
     public static int currentHealth = 5;
     public GameObject currentLevelInst;
 
     public static LayerMask layerMask_Floor;
     public static UnityEvent levelEndEvent = new UnityEvent();
+    public UnityEvent tallLevelEvent = new UnityEvent();
 
     public static PlayerInputAction playerInputAction;
     public static Pool pool_LoudAudioSource;
@@ -28,8 +30,10 @@ public class GameManager : MonoBehaviour
     public static GameObject creditsMenu;
     public static GameObject splashScreen;
     public static GameObject tutorialBox;
+    public static GameObject tutorialBoxDoubleJump;
     public static TextMeshProUGUI plotText;
     public static Transform playerTrans;
+    public static Transform goalTrans;
     public static Camera mainCamera;
     public static GameObject graphicsPlayerArrow;
 
@@ -66,8 +70,11 @@ public class GameManager : MonoBehaviour
         }
         tutorialBox = GameObject.Find("Canvas/GameMenu/TutorialBox");
         tutorialBox.SetActive(false);
+        tutorialBoxDoubleJump = GameObject.Find("Canvas/GameMenu/TutorialBoxDoubleJump");
+        tutorialBoxDoubleJump.SetActive(false);
 
         playerTrans = GameObject.Find("Player").transform;
+        goalTrans = GameObject.Find("Goal").transform;
         mainCamera = GameObject.Find("MainCamera").GetComponent<Camera>();
         graphicsPlayerArrow = GameObject.Find("GraphicsPlayerArrow");
 
@@ -114,15 +121,27 @@ public class GameManager : MonoBehaviour
             GameManager.playerTrans.GetComponent<PlayerController>().SetTrailColor(Color.white);
         }
     }
+    public void ToggleTallGoal(bool newState) {
+        if (newState == true) {
+            GameManager.tallLevel = true;
+            goalTrans.position = new Vector3(goalTrans.position.x, 2, goalTrans.position.z);
+            tallLevelEvent.Invoke();
+        } else {
+            GameManager.tallLevel = false;
+            goalTrans.position = new Vector3(goalTrans.position.x, 0, goalTrans.position.z);
+        }
+    }
     public void NewLevel(int levelNum) {
         Time.timeScale = 0f;
 
         // reset settings
         tutorialBox.SetActive(false); // enable for tutorial
+        // tutorialBoxDoubleJump.SetActive(false);
         graphicsPlayerArrow.SetActive(false); // enable for tutorial
         TogglePossiblePlayerGoalsVisuals(true); // disable for tutorial, or for hard levels
         GameManager.myGameManager.ToggleGlassesPowerUp(false);
         GameManager.myGameManager.ToggleDrinkPowerUp(false);
+        GameManager.tallLevel = false;
         // special settings
         if (levelNum == 0) {
 
@@ -143,6 +162,8 @@ public class GameManager : MonoBehaviour
 
         currentLevelInst = GameObject.Instantiate(levels[levelNum]);
         currentLevelInst.SetActive(true);
+        GameManager.myGameManager.ToggleTallGoal(currentLevelInst.GetComponent<LevelProperties>().tallLevel);
+        tutorialBoxDoubleJump.SetActive(currentLevelInst.GetComponent<LevelProperties>().tutorialDoubleJump);
         plotMenu.SetActive(true);
         plotText.text = currentLevelInst.GetComponent<LevelProperties>().levelStory;
     }
@@ -161,6 +182,13 @@ public class GameManager : MonoBehaviour
         // this is to remove the jump SFX when player presses Start
         yield return new WaitForSecondsRealtime(0.1f);
         Time.timeScale = 1f;
+    }
+    public void PlayerDied() {
+        Destroy(currentLevelInst);
+        // currentLevel += 1;
+        myPlayerHealth.PlayerRestoreAllHealth(); // to do, might remove
+        levelEndEvent.Invoke();
+        NewLevel(currentLevel);
     }
     public void FinishedLevel() {
         Destroy(currentLevelInst);

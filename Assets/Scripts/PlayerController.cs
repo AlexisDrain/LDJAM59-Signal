@@ -16,9 +16,14 @@ public class PlayerController : MonoBehaviour
     public float horizontalDragEnergy = 0.98f;
     public float gravityEnergy = 10f;
 
+    [Header("Trampoline values")]
+    private bool canDoubleJump;
+    public float trampolineImpulse = 20f;
+
     [Header("Footsteps")]
     public float footstepDistanceToSFX = 1f;
     public AudioClip clipJump;
+    public AudioClip clipJumpTrampoline;
     public AudioClip clipFootstep;
     private bool onGround = false;
 
@@ -43,12 +48,28 @@ public class PlayerController : MonoBehaviour
             jumpImpulseCurrent = jumpImpulse;
         }
         if(onGround && GameManager.playerInputAction.Player.Jump.WasPressedThisFrame() && Time.timeScale >= 0.1f) {
+            canDoubleJump = true;
             myRigidbody.AddForce(Vector3.up * jumpImpulseCurrent, ForceMode.Impulse);
             GameManager.SpawnLoudAudio(clipJump);
         }
         if(myRigidbody.linearVelocity.y > 0.1f && GameManager.playerInputAction.Player.Jump.WasReleasedThisFrame()) {
             myRigidbody.linearVelocity = new Vector3(myRigidbody.linearVelocity.x, myRigidbody.linearVelocity.y * 0.5f, myRigidbody.linearVelocity.z);
         }
+
+        // trampoline jump
+        if(GameManager.tallLevel) {
+            if (onGround == false && canDoubleJump == true && GameManager.playerInputAction.Player.Jump.WasPressedThisFrame() && Time.timeScale >= 0.1f) {
+                canDoubleJump = false;
+                myRigidbody.linearVelocity = new Vector3(myRigidbody.linearVelocity.x, 0f, myRigidbody.linearVelocity.z);
+                myRigidbody.AddForce(Vector3.up * trampolineImpulse, ForceMode.Impulse);
+                GameManager.SpawnLoudAudio(clipJumpTrampoline);
+            }
+
+        }
+    }
+    public void TrampolineJump() {
+        myRigidbody.AddForce(Vector3.up * trampolineImpulse, ForceMode.Impulse);
+        GameManager.SpawnLoudAudio(clipJumpTrampoline);
     }
     float moveHorizontalVelocityCurrent;
     float maxHorizontalVelocityCurrent;

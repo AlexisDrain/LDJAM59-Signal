@@ -31,9 +31,18 @@ public class TrajectoryController : MonoBehaviour
             ball.fadeSignalText = textObj;
         }
 
-        int randomIndex = Random.Range(0, GameManager.myGameManager.possibleGoalTargets.Count);
+        int maxPossibleGoalTarget = 10;
+        if(GameManager.tallLevel) {
+            maxPossibleGoalTarget = 15;
+        }
+
+        int randomIndex = Random.Range(0, maxPossibleGoalTarget); // max is 10 or 15
         if(onlyBottomRow) {
-            randomIndex = Random.Range(5, GameManager.myGameManager.possibleGoalTargets.Count);
+            if(GameManager.tallLevel) {
+                randomIndex = Random.Range(10, maxPossibleGoalTarget);
+            } else {
+                randomIndex = Random.Range(5, maxPossibleGoalTarget);
+            }
         }
         if(indexToShootAt != -1) {
             randomIndex = indexToShootAt;

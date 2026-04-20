@@ -79,6 +79,9 @@ Sonniss 2015 - Game Audio Bundle\Coll Anderson - Slapstick Comedy\EFX INT Goofy 
 - Goal net  
 https://www.sketchuptextureclub.com/textures/architecture/tiles-interior/hexagonal-mixed/hexagonal-grey-marble-tile-texture-seamless-21415  
 
+- Tutorial button icons (p, space and arrow keys)  
+https://kenney.nl/assets/input-prompts  
+
 === Code ===  
 - EdgeDetectionColor shader to draw white lines around 3d objects:  
 Unity Standard Assets: https://docs.unity3d.com/540/Documentation/Manual/script-EdgeDetectEffectNormals.html  

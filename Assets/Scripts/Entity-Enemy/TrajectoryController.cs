@@ -18,6 +18,7 @@ public class TrajectoryController : MonoBehaviour
     private GameObject textObj;
     public bool reverseShots = false;
     public bool showText = true; // green enemy doesn't showText
+    public bool redText = false;
     public bool onlyBottomRow = false;
     [Header("read only")]
     public bool _hasShot = false;
@@ -43,21 +44,25 @@ public class TrajectoryController : MonoBehaviour
         }
         Transform square = GameManager.myGameManager.possibleGoalTargets[randomIndex];
 
-        if(reverseShots == true) {
+        targetReticle.position = square.position + randomizedOffset;
 
+        if (reverseShots == true) { // reverse shown shot.
             square = GameManager.myGameManager.possibleGoalTargets[^(randomIndex+1)]; // ^ hat is a reverse index operator. 1-indexed
             //List<Transform> reversedList = new List<Transform>(GameManager.myGameManager.possibleGoalTargets);
             //reversedList.Reverse();
             //square = reversedList[randomIndex];
         }
 
-        targetReticle.position = square.position + randomizedOffset;
 
         if(textObj) {
             textObj.GetComponent<TextMeshProUGUI>().text = square.GetComponent<SquareProperties>().squareName;
             Color newColor = square.GetComponent<SquareProperties>().squareColor;
             newColor.a = 1f;
-            textObj.GetComponent<TextMeshProUGUI>().color = newColor;
+            if(redText == true) {
+                textObj.GetComponent<TextMeshProUGUI>().color = Color.black;
+            } else {
+                textObj.GetComponent<TextMeshProUGUI>().color = newColor;
+            }
             if(showText == false) {
                 textObj.GetComponent<TextMeshProUGUI>().text = "";
             }

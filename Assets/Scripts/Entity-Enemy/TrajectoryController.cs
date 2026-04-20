@@ -38,6 +38,9 @@ public class TrajectoryController : MonoBehaviour
             randomIndex = indexToShootAt;
         }
         Vector3 randomizedOffset = new Vector3(Random.Range(-0.9f, 0.9f), Random.Range(-0.9f, 0.9f), 0f);
+        if(onlyBottomRow) { // make fans shoot a little closer to the ground by decreasing Y offset range
+            randomizedOffset = new Vector3(Random.Range(-0.9f, 0.9f), Random.Range(-0.9f, 0.1f), 0f);
+        }
         Transform square = GameManager.myGameManager.possibleGoalTargets[randomIndex];
 
         if(reverseShots == true) {

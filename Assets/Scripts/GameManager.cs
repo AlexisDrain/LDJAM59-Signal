@@ -120,9 +120,9 @@ public class GameManager : MonoBehaviour
         if (levelNum == 0) {
 
             print("testing game! remember to uncomment these 3 lines!");
-            tutorialBox.SetActive(true);
-            graphicsPlayerArrow.SetActive(true);
-            TogglePossiblePlayerGoalsVisuals(false);
+            // tutorialBox.SetActive(true);
+            // graphicsPlayerArrow.SetActive(true);
+            // TogglePossiblePlayerGoalsVisuals(false);
         }
         else if (levelNum == 1) {
             GameManager.visionPowerUp = true;

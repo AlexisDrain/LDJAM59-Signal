@@ -12,6 +12,7 @@ public class FadeSignalText : MonoBehaviour
     private float distance;
     void Start() {
         myText = GetComponent<TextMeshProUGUI>();
+        GameManager.levelEndEvent.AddListener(() => Destroy(gameObject));
     }
     void LateUpdate()
     {

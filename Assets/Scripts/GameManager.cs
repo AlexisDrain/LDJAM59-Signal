@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public static bool startedGame = false;
     public static bool tallLevel = false;
     public static int currentLevel = 0;
-    public static int currentHealth = 5;
+    public static int currentHealth = 3;
     public GameObject currentLevelInst;
 
     public static LayerMask layerMask_Floor;
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
         creditsMenu.gameObject.SetActive(false);
         plotMenu.gameObject.SetActive(true);
 
-        currentHealth = 5;
+        currentHealth = 3;
         GetComponent<PlayerHealth>().UpdateHealthValue(currentHealth);
         currentLevel = 0;
         NewLevel(0);

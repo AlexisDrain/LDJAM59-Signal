@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
         
     }
     public void UpdateHealthValue(int newHealth) {
+        /*
         if (newHealth == 0) {
             sprites[0].GetComponent<Image>().sprite = heartNo;
             sprites[1].GetComponent<Image>().sprite = heartNo;
@@ -54,10 +55,34 @@ public class PlayerHealth : MonoBehaviour
         } else {
             print("Warning: player health is not between 5 and 1!");
         }
+        */
+
+        if (newHealth == 0) {
+            sprites[0].GetComponent<Image>().sprite = heartNo;
+            sprites[1].GetComponent<Image>().sprite = heartNo;
+            sprites[2].GetComponent<Image>().sprite = heartNo;
+        } else if (newHealth == 1) {
+            sprites[0].GetComponent<Image>().sprite = heartYes;
+            sprites[1].GetComponent<Image>().sprite = heartNo;
+            sprites[2].GetComponent<Image>().sprite = heartNo;
+        } else if (newHealth == 2) {
+            sprites[0].GetComponent<Image>().sprite = heartYes;
+            sprites[1].GetComponent<Image>().sprite = heartYes;
+            sprites[2].GetComponent<Image>().sprite = heartNo;
+        } else if (newHealth == 3) {
+            sprites[0].GetComponent<Image>().sprite = heartYes;
+            sprites[1].GetComponent<Image>().sprite = heartYes;
+            sprites[2].GetComponent<Image>().sprite = heartYes;
+        } else {
+            print("Warning: player health is not between 3 and 0!");
+        }
     }
     public void PlayerLoseGoal() {
         GameManager.currentHealth -= 1;
         UpdateHealthValue(GameManager.currentHealth);
+        if(GameManager.currentHealth <= 0) {
+            GameManager.myGameManager.PlayerDied();
+        }
     }
     public void PlayerLoseHealth() {
         GameManager.currentHealth -= 1;
@@ -65,7 +90,7 @@ public class PlayerHealth : MonoBehaviour
         GameManager.SpawnLoudAudio(loseHealthSFX);
     }
     public void PlayerRestoreAllHealth() {
-        GameManager.currentHealth = 5;
+        GameManager.currentHealth = 3;
         UpdateHealthValue(GameManager.currentHealth);
     }
 }

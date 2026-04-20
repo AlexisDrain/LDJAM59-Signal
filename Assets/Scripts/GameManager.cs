@@ -166,6 +166,9 @@ public class GameManager : MonoBehaviour
         currentLevelInst.SetActive(true);
         GameManager.myGameManager.ToggleTallGoal(currentLevelInst.GetComponent<LevelProperties>().tallLevel);
         tutorialBoxDoubleJump.SetActive(currentLevelInst.GetComponent<LevelProperties>().tutorialDoubleJump);
+        if(currentLevelInst.GetComponent<LevelProperties>().removeColorGrid) {
+            TogglePossiblePlayerGoalsVisuals(false);
+        }
         plotMenu.SetActive(true);
         plotText.text = currentLevelInst.GetComponent<LevelProperties>().levelStory;
     }

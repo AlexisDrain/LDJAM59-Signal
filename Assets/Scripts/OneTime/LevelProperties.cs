@@ -8,6 +8,7 @@ public class LevelProperties : MonoBehaviour
     public string levelStory = "";
     public bool tallLevel = false;
     public bool tutorialDoubleJump = false;
+    public bool removeColorGrid = false;
     //void Start()
     //{
     //    

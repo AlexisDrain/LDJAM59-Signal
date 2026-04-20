@@ -9445,11 +9445,11 @@ MonoBehaviour:
   maxHorizontalVelocity: 10
   horizontalDrag: 0.85
   gravity: 20
-  jumpImpulseEnergy: 16
+  jumpImpulseEnergy: 10
   moveHorizontalVelocityEnergy: 120
   maxHorizontalVelocityEnergy: 20
   horizontalDragEnergy: 0.85
-  gravityEnergy: 40
+  gravityEnergy: 20
   footstepDistanceToSFX: 1.8
   clipJump: {fileID: 8300000, guid: d9d3a8279b771fa46b58a877de0ab575, type: 3}
   clipFootstep: {fileID: 8300000, guid: ca1dbd9bd2174f844b6436e55da439fa, type: 3}

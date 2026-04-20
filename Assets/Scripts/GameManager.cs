@@ -98,6 +98,13 @@ public class GameManager : MonoBehaviour
         creditsMenu.gameObject.SetActive(false);
         plotMenu.gameObject.SetActive(false);
     }
+    public void ToggleGlassesPowerUp(bool newState) {
+        if (newState == true) {
+            GameManager.visionPowerUp = true;
+        } else {
+            GameManager.visionPowerUp = false;
+        }
+    }
     public void ToggleDrinkPowerUp(bool newState) {
         if(newState == true) {
             GameManager.energyPowerUp = true;
@@ -114,19 +121,19 @@ public class GameManager : MonoBehaviour
         tutorialBox.SetActive(false); // enable for tutorial
         graphicsPlayerArrow.SetActive(false); // enable for tutorial
         TogglePossiblePlayerGoalsVisuals(true); // disable for tutorial, or for hard levels
-        GameManager.visionPowerUp = false;
+        GameManager.myGameManager.ToggleGlassesPowerUp(false);
         GameManager.myGameManager.ToggleDrinkPowerUp(false);
         // special settings
         if (levelNum == 0) {
 
-            print("testing game! remember to uncomment these 3 lines!");
+            print("testing game! remember to uncomment these 5 lines!");
             // tutorialBox.SetActive(true);
             // graphicsPlayerArrow.SetActive(true);
             // TogglePossiblePlayerGoalsVisuals(false);
         }
         else if (levelNum == 1) {
-            GameManager.visionPowerUp = true;
-            graphicsPlayerArrow.SetActive(true);
+            // GameManager.visionPowerUp = true;
+            // graphicsPlayerArrow.SetActive(true);
         }
 
         // TESTING. ENDLESS MODE

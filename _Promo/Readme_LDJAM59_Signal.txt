@@ -61,6 +61,9 @@ Sonniss.com 2019 - Game Audio Bundle\3maze - Kitchenware\draft_guinness_can_open
 Taking Large Gulps of Water by GemstoneProductions99 -- https://freesound.org/s/570876/ -- License: Creative Commons 0  
 coffesip.wav by cbmontes -- https://freesound.org/s/554704/ -- License: Creative Commons 0
 
+- Pickup X-Ray glasses:
+loy's gun bullet case in.wav by martian -- https://freesound.org/s/182261/ -- License: Creative Commons 0
+
 - Crowd boo (score fail)  
 Sonniss 2018 - Game Audio Bundle\Airborne Sound - Half & Half Sound FX Pack 1\Crowd,Bar  Pub,Male,Boo,Aww,Friendly Disappointment.wav  
 

@@ -7,6 +7,7 @@ using UnityEngine.ProBuilder.Shapes;
 public class DrinkStats : MonoBehaviour
 {
     /* Alexis Clay Drain */
+    public bool powerUpIsGlasses = false;
     public List<AudioClip> shootSFX = new List<AudioClip>();
     public AudioClip drinkSFX;
     public AudioClip goalPostSFX;
@@ -72,7 +73,7 @@ public class DrinkStats : MonoBehaviour
         // myAudioSource.PlayWebGL();
     }
     public void DrinkCaughtByPlayer() {
-        if(scored) {
+        if (scored) {
             return;
         }
         mySphereCollider.enabled = false;
@@ -82,7 +83,12 @@ public class DrinkStats : MonoBehaviour
         transform.parent.GetComponent<TrajectoryController>().EndShot();
         GameManager.SpawnLoudAudio(drinkSFX, new Vector2(0.9f, 1.2f));
 
-        GameManager.myGameManager.ToggleDrinkPowerUp(true);
+        if (powerUpIsGlasses) {
+            GameManager.myGameManager.ToggleGlassesPowerUp(true);
+        } else {
+            GameManager.myGameManager.ToggleDrinkPowerUp(true);
+        }
+
 
         Destroy(transform.parent.gameObject);
 

@@ -8,11 +8,17 @@ public class PickRandomGoalTarget : MonoBehaviour
 
     public float distanceColorOffset = 3f;
     private TrajectoryController trajectoryController;
+    private HecklerController hecklerController;
+    public Transform trackedObject;
     private SpriteRenderer mySprite;
     private float myAlpha = 1f;
     void Start()
     {
         trajectoryController = transform.parent.GetComponent<TrajectoryController>();
+        hecklerController = transform.parent.GetComponent<HecklerController>();
+        if(trajectoryController) {
+            trackedObject = trajectoryController.ball.transform;
+        }
         mySprite = GetComponent<SpriteRenderer>();
         mySprite.color = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b, 0f);
 
@@ -20,13 +26,22 @@ public class PickRandomGoalTarget : MonoBehaviour
     }
 
     private float distance;
+    private bool _shotEnded;
+    private bool _hasShot;
     private void FixedUpdate() {
-        if(trajectoryController._shotEnded == false) {
-            if (trajectoryController._hasShot == true) {
-                if (GameManager.visionPowerUp == true) {
+        if(trajectoryController) {
+            _shotEnded = trajectoryController._shotEnded;
+            _hasShot = trajectoryController._hasShot;
+        } else {
+            _shotEnded = hecklerController._shotEnded;
+            _hasShot = hecklerController._hasShot;
+        }
+        if(_shotEnded == false) {
+            if (_hasShot == true) {
+                if (GameManager.visionPowerUp == true || trackedObject == null) { // tackedObject is null in case of Bullet
                     mySprite.color = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b, 1f);
                 } else {
-                    distance = Vector3.Distance(transform.position, trajectoryController.ball.transform.position) - distanceColorOffset;
+                    distance = Vector3.Distance(transform.position, trackedObject.position) - distanceColorOffset;
                     if(distance <= 0f) {
                         distance = 0.001f;
                     }
@@ -36,7 +51,7 @@ public class PickRandomGoalTarget : MonoBehaviour
                 }
             }
         }
-        else if(trajectoryController._shotEnded == true) {
+        else if(_shotEnded == true) {
             mySprite.color = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b, 0f);
         }
     }

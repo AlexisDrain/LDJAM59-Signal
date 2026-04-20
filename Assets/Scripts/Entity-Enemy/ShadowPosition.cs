@@ -13,7 +13,7 @@ public class ShadowPosition : MonoBehaviour
     private void LateUpdate() {
 
         RaycastHit hit;
-        Physics.Linecast(transform.position, transform.position + new Vector3(0f, -15f, 0f), out hit);
+        Physics.Linecast(transform.position, transform.position + new Vector3(0f, -15f, 0f), out hit, (1 << LayerMask.NameToLayer("Floor")));
         if (hit.collider) {
             if (hit.collider.CompareTag("Floor")) {
                 transform.position = hit.point + new Vector3(0f, 0.1f, 0f);

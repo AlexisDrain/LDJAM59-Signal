@@ -253,13 +253,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57d8b50fd0e3eb4f9358e1ab1d941fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  levelStory: '<color=#00B4FF>Level 1/13 - For Real This Time</color>
+  levelStory: '<color=#00B4FF>Level 2/12</color>
 
 
-    Your
-    team, representing Humanity, has bribed the opponent team so they will signal
-    what shots they will take. But they must pretend to score the goal for insurance
-    purposes!'
+    Good work so far, but our
+    team is REALLY behind and you need to keep up the pace.
+
+'
 --- !u!114 &8687706038000022180
 MonoBehaviour:
   m_ObjectHideFlags: 0

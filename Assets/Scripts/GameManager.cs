@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,12 +10,16 @@ public class GameManager : MonoBehaviour
     public static bool visionPowerUp = false;
     public static bool startedGame = false;
     public static int currentLevel = 0;
+    public static int currentHealth = 5;
     public GameObject currentLevelInst;
+
+    public static UnityEvent levelEndEvent = new UnityEvent();
 
     public static PlayerInputAction playerInputAction;
     public static Pool pool_LoudAudioSource;
 
     public static GameManager myGameManager;
+    public static PlayerHealth myPlayerHealth;
     public static Transform canvasWorld;
     public static GameObject startMenu;
     public static GameObject plotMenu;
@@ -32,7 +37,6 @@ public class GameManager : MonoBehaviour
 
     public List<Transform> possibleGoalTargets = new List<Transform>();
     public List<GameObject> levels = new List<GameObject>();
-
     void Awake() {
         GameObject.Find("Canvas/CreditsMenu/GameVersion").GetComponent<TextMeshProUGUI>().text = $"Version: {Application.version.ToString()}";
         playerInputAction = new PlayerInputAction();
@@ -41,6 +45,7 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 0f;
         myGameManager = GetComponent<GameManager>();
+        myPlayerHealth = GetComponent<PlayerHealth>();
         canvasWorld = GameObject.Find("CanvasWorld").transform;
         startMenu = GameObject.Find("Canvas/StartMenu");
         plotText = GameObject.Find("Canvas/PlotMenu/PlotBox/Text (TMP)").GetComponent<TextMeshProUGUI>();
@@ -69,6 +74,9 @@ public class GameManager : MonoBehaviour
         creditsMenu.gameObject.SetActive(false);
         plotMenu.gameObject.SetActive(true);
 
+        currentHealth = 5;
+        GetComponent<PlayerHealth>().UpdateHealthValue(currentHealth);
+        currentLevel = 0;
         NewLevel(0);
     }
     public void PauseGame() {
@@ -88,9 +96,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
 
         // reset settings
-        tutorialBox.SetActive(false);
-        graphicsPlayerArrow.SetActive(false);
-        TogglePossiblePlayerGoalsVisuals(true);
+        tutorialBox.SetActive(false); // enable for tutorial
+        graphicsPlayerArrow.SetActive(false); // enable for tutorial
+        TogglePossiblePlayerGoalsVisuals(true); // disable for tutorial, or for hard levels
         GameManager.visionPowerUp = false;
         // special settings
         if (levelNum == 0) {
@@ -102,12 +110,13 @@ public class GameManager : MonoBehaviour
             graphicsPlayerArrow.SetActive(true);
         }
 
-        // TESTING
-        if(levelNum >= 2) {
-            levelNum = 2;
-        }
+        // TESTING. ENDLESS MODE
+        // if(levelNum >= 2) {
+        //     levelNum = 2;
+        // }
 
         currentLevelInst = GameObject.Instantiate(levels[levelNum]);
+        currentLevelInst.SetActive(true);
         plotMenu.SetActive(true);
         plotText.text = currentLevelInst.GetComponent<LevelProperties>().levelStory;
     }
@@ -130,6 +139,8 @@ public class GameManager : MonoBehaviour
     public void FinishedLevel() {
         Destroy(currentLevelInst);
         currentLevel += 1;
+        myPlayerHealth.PlayerRestoreAllHealth(); // to do, might remove
+        levelEndEvent.Invoke();
         NewLevel(currentLevel);
     }
     private void TogglePossiblePlayerGoalsVisuals(bool newState) {

@@ -4,58 +4,47 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
 
-public class BallStats : MonoBehaviour
+public class BulletStats : MonoBehaviour
 {
     /* Alexis Clay Drain */
-    public List<AudioClip> shootSFX = new List<AudioClip>();
-    public AudioClip deflectSFX;
     public AudioClip goalPostSFX;
-    public List<AudioClip> failSFX = new List<AudioClip>();
+    public AudioClip hitOtherSFX;
     public float shootImpulse;
     public Transform target;
-    public GameObject fadeSignalText;
-    public float backupKillGameObjectTimer = 15f;
+    public float backupKillGameObjectTimer = 5f;
 
-    public SpriteRenderer mySprite;
+    public GameObject graphics;
     private bool scored = false;
-    private SphereCollider mySphereCollider;
-    private Rigidbody myRigidbody;
-    private AudioSource myAudioSource;
+    public SphereCollider mySphereCollider;
+    public Rigidbody myRigidbody;
     void Start() {
         mySphereCollider = GetComponent<SphereCollider>();
         myRigidbody = GetComponent<Rigidbody>();
-        myAudioSource = GetComponent<AudioSource>();
+
+        GameManager.levelEndEvent.AddListener(() => Destroy(gameObject));
     }
 
-    public void ShootBall() {
+    public void ShootBullet() {
         mySphereCollider.enabled = true;
-        Vector3 direction = (target.position - transform.position).normalized;
+        Vector3 direction = (target.position - transform.position).normalized; // Quaternion.Euler(new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0f)) *
+
         myRigidbody.AddForce(direction * shootImpulse, ForceMode.Impulse);
         //GameObject missile = GameManager.pool_EnemyMissile.Spawn(bulletStart.position);
         // missile.GetComponent<Rigidbody>().AddForce(direction * shootImpulse, ForceMode.Impulse);
         //missile.GetComponent<BulletStats>().direction = direction;
 
-        int idx = Random.Range(0, shootSFX.Count);
-        myAudioSource.clip = shootSFX[idx];
-        myAudioSource.pitch = Random.Range(0.9f, 1.2f);
-        myAudioSource.PlayWebGL();
     }
-    public void BallHitNet() {
+    public void BulletHitNet() {
 
-        //mySphereCollider.enabled = false;
-        //myRigidbody.linearVelocity = Vector3.zero;
-        //myRigidbody.AddForce(GameManager.playerTrans.forward, ForceMode.Impulse);
+        mySphereCollider.enabled = false;
+        myRigidbody.linearVelocity = Vector3.zero;
+        myRigidbody.AddForce(GameManager.playerTrans.forward, ForceMode.Impulse);
         scored = true;
-        Destroy(fadeSignalText);
-        StartCoroutine(DisapearCountdown());
 
-        transform.parent.GetComponent<TrajectoryController>().EndShot();
+        Destroy(gameObject);
+        //StartCoroutine(DisapearCountdown());
 
-        mySprite.sortingOrder = -3;
-        int idx = Random.Range(0, failSFX.Count);
-        GameManager.SpawnLoudAudio(failSFX[idx], new Vector2(0.9f, 1.2f));
-
-        GameManager.myPlayerHealth.PlayerLoseGoal();
+        // mySprite.sortingOrder = -3;
         //myAudioSource.clip = failSFX;
         //myAudioSource.pitch = Random.Range(0.9f, 1.2f);
         //myAudioSource.PlayWebGL();
@@ -64,13 +53,12 @@ public class BallStats : MonoBehaviour
         if (scored) {
             return;
         }
-        Destroy(fadeSignalText);
+        scored = true;
         mySphereCollider.enabled = false;
         myRigidbody.linearVelocity = Vector3.zero;
         myRigidbody.AddForce(-Vector3.forward * 4f, ForceMode.Impulse);
 
-        transform.parent.GetComponent<TrajectoryController>().EndShot();
-
+        // Destroy(gameObject);
         StartCoroutine(DisapearCountdown());
 
         GameManager.SpawnLoudAudio(goalPostSFX, new Vector2(0.9f, 1.2f));
@@ -78,20 +66,32 @@ public class BallStats : MonoBehaviour
         // myAudioSource.pitch = Random.Range(1.2f, 1.5f);
         // myAudioSource.PlayWebGL();
     }
-    public void BallCaughtByPlayer() {
+    public void BulletHitOther() {
+
+        scored = true;
+        mySphereCollider.enabled = false;
+        myRigidbody.linearVelocity = Vector3.zero;
+
+        Destroy(gameObject);
+        //StartCoroutine(DisapearCountdown());
+
+        GameManager.SpawnLoudAudio(hitOtherSFX, new Vector2(0.9f, 1.2f));
+    }
+    public void BulletHitPlayer() {
         if(scored) {
             return;
         }
-        Destroy(fadeSignalText);
+        scored = true;
         mySphereCollider.enabled = false;
         myRigidbody.linearVelocity = Vector3.zero;
         myRigidbody.AddForce(-Vector3.forward * 4f, ForceMode.Impulse);
 
-        transform.parent.GetComponent<TrajectoryController>().EndShot();
+        // transform.parent.GetComponent<HecklerController>().EndShot();
+        GameManager.myPlayerHealth.PlayerLoseHealth();
 
-        StartCoroutine(DisapearCountdown());
+        Destroy(gameObject);
+        //StartCoroutine(DisapearCountdown());
 
-        GameManager.SpawnLoudAudio(deflectSFX, new Vector2(0.9f, 1.2f));
         // myAudioSource.clip = deflectSFX;
         // myAudioSource.pitch = Random.Range(1.2f, 1.5f);
         // myAudioSource.PlayWebGL();
@@ -103,22 +103,21 @@ public class BallStats : MonoBehaviour
             backupKillGameObjectTimer -= Time.deltaTime;
         } else {
             backupKillGameObjectTimerActive = false;
-            StartCoroutine(DisapearCountdown());
+            // StartCoroutine(DisapearCountdown());
+            Destroy(gameObject); // destroy immedietly.
         }
     }
     private IEnumerator DisapearCountdown() {
 
-        for (int i = 0; i < 10; i++) {
-            mySprite.enabled = false;
+
+        for (int i = 0; i < 5; i++) {
+            graphics.SetActive(false);
             yield return new WaitForSeconds(0.1f);
-            mySprite.enabled = true;
+            graphics.SetActive(true);
             yield return new WaitForSeconds(0.1f);
         }
         // yield return new WaitForSeconds(1f);
-        if(fadeSignalText) {
-            Destroy(fadeSignalText);
-        }
-        Destroy(transform.parent.gameObject);
+        Destroy(gameObject);
         //transform.parent.gameObject.SetActive(false);
     }
 }

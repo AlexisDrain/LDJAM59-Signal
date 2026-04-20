@@ -14,7 +14,12 @@ public class TriggerEnterGoal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Ball")) {
-            other.GetComponent<BallStats>().BallHitNet();
+            if(other.GetComponent<BallStats>()) {
+                other.GetComponent<BallStats>().BallHitNet();
+            }
+            // if (other.GetComponent<BulletStats>()) {
+            //     other.GetComponent<BulletStats>().BulletHitNet();
+            // }
             goalEvent.Invoke();
         } else {
             regularEvent.Invoke();

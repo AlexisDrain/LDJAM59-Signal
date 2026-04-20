@@ -9,6 +9,7 @@ TagManager:
   - Ball
   - GoalPost
   - PlayerTrigger
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Triggers
   - Balls
   - Player
-  - 
-  - 
+  - Bullets
+  - Floor
   - 
   - 
   - 

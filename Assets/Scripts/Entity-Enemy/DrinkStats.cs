@@ -84,7 +84,7 @@ public class DrinkStats : MonoBehaviour
 
         GameManager.myGameManager.ToggleDrinkPowerUp(true);
 
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
 
         // myAudioSource.clip = deflectSFX;
         // myAudioSource.pitch = Random.Range(1.2f, 1.5f);

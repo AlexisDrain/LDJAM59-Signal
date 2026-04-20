@@ -12,8 +12,8 @@ public class RotateTransformInPlace : MonoBehaviour
     {
         x += Time.deltaTime * x_speed;
         y += Time.deltaTime * y_speed;
-        x = Mathf.Clamp(x, 0f, 360f);
-        y = Mathf.Clamp(y, 0f, 360f);
+        x = x % 360;
+        y = y % 360;
         transform.rotation = Quaternion.Euler(x, y, 0f);
     }
 

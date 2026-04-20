@@ -125,6 +125,7 @@ public class GameManager : MonoBehaviour
             //TogglePossiblePlayerGoalsVisuals(false);
         }
         else if (levelNum == 1) {
+            GameManager.visionPowerUp = true;
             graphicsPlayerArrow.SetActive(true);
         }
 

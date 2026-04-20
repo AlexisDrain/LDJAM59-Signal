@@ -41,9 +41,11 @@ public class TrajectoryController : MonoBehaviour
         Transform square = GameManager.myGameManager.possibleGoalTargets[randomIndex];
 
         if(reverseShots == true) {
-            List<Transform> reversedList = new List<Transform>(GameManager.myGameManager.possibleGoalTargets);
-            reversedList.Reverse();
-            square = reversedList[randomIndex];
+
+            square = GameManager.myGameManager.possibleGoalTargets[^(randomIndex+1)]; // ^ hat is a reverse index operator. 1-indexed
+            //List<Transform> reversedList = new List<Transform>(GameManager.myGameManager.possibleGoalTargets);
+            //reversedList.Reverse();
+            //square = reversedList[randomIndex];
         }
 
         targetReticle.position = square.position + randomizedOffset;

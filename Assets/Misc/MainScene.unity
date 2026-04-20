@@ -10338,12 +10338,12 @@ MonoBehaviour:
   - {fileID: 806038007}
   - {fileID: 30290519}
   levels:
-  - {fileID: 7769248341917629347, guid: 646216a5ca80f56479577364fa904c0d, type: 3}
   - {fileID: 6964469972109008289, guid: e3b079ccc942bbd4ca276831bae2f837, type: 3}
   - {fileID: 2733237201631714965, guid: 194bcbe61bb621447bf72a04e006ca16, type: 3}
   - {fileID: 6758893740257963882, guid: 56d5e3d218ccc5b49aee581bc5af456d, type: 3}
   - {fileID: 3443428153889655728, guid: 81f420b3829a54848afd797808519643, type: 3}
   - {fileID: 4444727591591654028, guid: 1b71b0230974ec1459dc40cb7f57f7e6, type: 3}
+  - {fileID: 7769248341917629347, guid: 646216a5ca80f56479577364fa904c0d, type: 3}
 --- !u!4 &758330409
 Transform:
   m_ObjectHideFlags: 0
@@ -22639,7 +22639,7 @@ SpriteRenderer:
   m_SortingOrder: 101
   m_MaskInteraction: 0
   m_Sprite: {fileID: -770801149, guid: fd144df12e8bdf0408126eb7f575c638, type: 3}
-  m_Color: {r: 0, g: 0.7329025, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.7329025, b: 1, a: 0.56078434}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -24385,7 +24385,7 @@ PrefabInstance:
       objectReference: {fileID: 1481089919}
     - target: {fileID: 5636548925805728839, guid: 1b71b0230974ec1459dc40cb7f57f7e6, type: 3}
       propertyPath: m_VersionIndex
-      value: 1728
+      value: 1731
       objectReference: {fileID: 0}
     - target: {fileID: 5770101161459152195, guid: 1b71b0230974ec1459dc40cb7f57f7e6, type: 3}
       propertyPath: m_Mesh
@@ -24443,10 +24443,6 @@ PrefabInstance:
     - target: {fileID: 3443428153889655728, guid: 81f420b3829a54848afd797808519643, type: 3}
       propertyPath: m_Name
       value: Level3-Shootout
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443428153889655728, guid: 81f420b3829a54848afd797808519643, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6392723191891505459, guid: 81f420b3829a54848afd797808519643, type: 3}
       propertyPath: m_LocalPosition.x

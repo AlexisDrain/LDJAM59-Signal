@@ -88,6 +88,9 @@ public class PlayerHealth : MonoBehaviour
         GameManager.currentHealth -= 1;
         UpdateHealthValue(GameManager.currentHealth);
         GameManager.SpawnLoudAudio(loseHealthSFX);
+        if (GameManager.currentHealth <= 0) {
+            GameManager.myGameManager.PlayerDied();
+        }
     }
     public void PlayerRestoreAllHealth() {
         GameManager.currentHealth = 3;

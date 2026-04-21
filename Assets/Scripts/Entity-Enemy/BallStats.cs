@@ -25,6 +25,8 @@ public class BallStats : MonoBehaviour
         mySphereCollider = GetComponent<SphereCollider>();
         myRigidbody = GetComponent<Rigidbody>();
         myAudioSource = GetComponent<AudioSource>();
+
+        // GameManager.levelEndEvent.AddListener(() => Destroy(gameObject));
     }
 
     public void ShootBall() {

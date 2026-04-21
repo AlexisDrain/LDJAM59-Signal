@@ -86,6 +86,8 @@ public class GameManager : MonoBehaviour
     public void EndGame() {
         Time.timeScale = 0f;
         startedGame = false;
+        currentLevel = 0;
+        currentHealth = 3;
         playerInputAction.Disable();
         // startMenu.gameObject.SetActive(true);
         // creditsMenu.gameObject.SetActive(false);
@@ -109,13 +111,20 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         startMenu.gameObject.SetActive(true);
         creditsMenu.gameObject.SetActive(false);
-        plotMenu.gameObject.SetActive(false);
+        // plotMenu.gameObject.SetActive(false);
     }
     public void ResumeGame() {
-        Time.timeScale = 1f;
-        startMenu.gameObject.SetActive(false);
-        creditsMenu.gameObject.SetActive(false);
-        plotMenu.gameObject.SetActive(false);
+        if(plotMenu.activeSelf) {
+            startMenu.gameObject.SetActive(false);
+            creditsMenu.gameObject.SetActive(false);
+            plotMenu.gameObject.SetActive(true);
+        } else {
+            Time.timeScale = 1f;
+            startMenu.gameObject.SetActive(false);
+            creditsMenu.gameObject.SetActive(false);
+            plotMenu.gameObject.SetActive(false);
+
+        }
     }
     public void ToggleGlassesPowerUp(bool newState) {
         if (newState == true) {
@@ -226,23 +235,28 @@ public class GameManager : MonoBehaviour
         }
     }
     public void Update() {
+        if(endMenu.activeSelf) {
+            return;
+        }
         if(plotMenu.activeSelf) {
             if(GameManager.playerInputAction.Player.PlotButtonStart.WasPressedThisFrame()) {
                 PlotButtonStart();
+            }
+            if(GameManager.playerInputAction.Player.Pause.WasPressedThisFrame()) {
+                PauseGame();
             }
             return;
         }
 
         if(GameManager.playerInputAction.Player.Pause.WasPressedThisFrame()) {
             if (startedGame == true) {
-                if (startMenu.activeSelf == true) {
-                    ResumeGame();
-                }
-                //else if(creditsMenu.activeSelf == true) {
-                //    PauseGame();
-                //}
-                else {
-                    PauseGame();
+                if(plotMenu.activeSelf == false) {
+                    if (startMenu.activeSelf == true) {
+                        ResumeGame();
+                    }
+                    else {
+                        PauseGame();
+                    }
                 }
             }
         }

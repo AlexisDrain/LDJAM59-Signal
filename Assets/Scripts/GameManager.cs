@@ -87,9 +87,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         startedGame = false;
         playerInputAction.Disable();
-        startMenu.gameObject.SetActive(true);
-        creditsMenu.gameObject.SetActive(false);
-        plotMenu.gameObject.SetActive(false);
+        // startMenu.gameObject.SetActive(true);
+        // creditsMenu.gameObject.SetActive(false);
+        // plotMenu.gameObject.SetActive(false);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

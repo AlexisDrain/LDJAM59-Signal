@@ -78,7 +78,7 @@ Sonniss 2024 - Game Audio Bundle\Mechanical Wave - Torturing Metal\METLImpt_Meta
 - Trampoline
 Sonniss 2015 - Game Audio Bundle\Coll Anderson - Slapstick Comedy\EFX INT Goofy Spring Bounces 04.wav
 
-=== Texture ===  
+=== Textures ===  
 - Goal net  
 https://www.sketchuptextureclub.com/textures/architecture/tiles-interior/hexagonal-mixed/hexagonal-grey-marble-tile-texture-seamless-21415  
 

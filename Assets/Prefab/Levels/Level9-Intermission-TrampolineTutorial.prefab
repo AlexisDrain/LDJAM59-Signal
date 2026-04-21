@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57d8b50fd0e3eb4f9358e1ab1d941fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  levelStory: '<color=#00B4FF>Half-time</color>
+  levelStory: '<color=#00B4FF>Intermission</color>
 
 
     Due to a sudden rule change,
@@ -61,6 +61,7 @@ MonoBehaviour:
     in mid-air to jump again!'
   tallLevel: 1
   tutorialDoubleJump: 1
+  removeColorGrid: 0
 --- !u!114 &885594777631001643
 MonoBehaviour:
   m_ObjectHideFlags: 0

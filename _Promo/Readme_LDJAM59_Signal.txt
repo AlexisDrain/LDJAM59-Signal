@@ -16,7 +16,7 @@ https://ldjam.com/events/ludum-dare/59/99-Penalty-Kicks
 
 Controls:  
 Move - Left/right arrow keys or A/D  
-Jump - Space or up arrow. Hold to jump higher.  
+Jump - Space or up arrow. Hold to jump higher. Can double-jump after level 9.  
 Pause - Escape or P  
 
 Notes:  

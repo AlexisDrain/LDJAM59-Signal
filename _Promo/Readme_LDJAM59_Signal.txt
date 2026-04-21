@@ -85,10 +85,6 @@ https://www.sketchuptextureclub.com/textures/architecture/tiles-interior/hexagon
 - Tutorial button icons (p, space and arrow keys)  
 https://kenney.nl/assets/input-prompts  
 
-=== Code ===  
-- EdgeDetectionColor shader to draw white lines around 3d objects:  
-Unity Standard Assets: https://docs.unity3d.com/540/Documentation/Manual/script-EdgeDetectEffectNormals.html  
-
 
 === Fonts ===  
 Micro Chat by VEXED (Pixel art font):  

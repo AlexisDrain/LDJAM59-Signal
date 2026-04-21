@@ -815,14 +815,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57d8b50fd0e3eb4f9358e1ab1d941fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  levelStory: '<color=#00B4FF>Level 7/12</color>
+  levelStory: '<color=#00B4FF>Level 8/12</color>
 
 
     Oh no, the judges have caught
     on that the other team has been bribed! But they can''t shut down the game while
     it''s live! Instead, a decoy <color=red>red-shirt players</color> have subbed
-    in, and they will do the OPPOSITE X and Y coordinates of the signals! So B3 becomes
-    A3, and A1 becomes B5, etc.'
+    in, and they will do the OPPOSITE X and Y coordinates of the signals! So 3B becomes
+    3A, and 1A becomes 5B, etc.'
   tallLevel: 0
   tutorialDoubleJump: 0
   removeColorGrid: 0

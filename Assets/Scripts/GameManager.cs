@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
     public static GameObject startMenu;
     public static GameObject plotMenu;
     public static GameObject creditsMenu;
+    public static GameObject endMenu;
     public static GameObject splashScreen;
     public static GameObject tutorialBox;
     public static GameObject tutorialBoxDoubleJump;
@@ -53,8 +55,6 @@ public class GameManager : MonoBehaviour
 
         pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
 
-
-
         Time.timeScale = 0f;
         myGameManager = GetComponent<GameManager>();
         myPlayerHealth = GetComponent<PlayerHealth>();
@@ -65,6 +65,8 @@ public class GameManager : MonoBehaviour
         plotMenu.SetActive(false);
         creditsMenu = GameObject.Find("Canvas/CreditsMenu");
         creditsMenu.SetActive(false);
+        endMenu = GameObject.Find("Canvas/EndMenu");
+        endMenu.SetActive(false);
         splashScreen = GameObject.Find("Canvas/SplashScreen");
         if(splashScreen == null) {
             Debug.LogError("Forgot to enable splash screen");
@@ -81,7 +83,16 @@ public class GameManager : MonoBehaviour
 
         trajectoryStarts = GameObject.Find("TrajectoryStarts").transform;
     }
+    public void EndGame() {
+        Time.timeScale = 0f;
+        startedGame = false;
+        playerInputAction.Disable();
+        startMenu.gameObject.SetActive(true);
+        creditsMenu.gameObject.SetActive(false);
+        plotMenu.gameObject.SetActive(false);
 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public void StartGame() {
         Time.timeScale = 0f;
         startedGame = true;
@@ -147,14 +158,13 @@ public class GameManager : MonoBehaviour
         // special settings
         if (levelNum == 0) {
 
-            print("testing game! remember to uncomment these 5 lines!");
-            // tutorialBox.SetActive(true);
-            // graphicsPlayerArrow.SetActive(true);
-            // TogglePossiblePlayerGoalsVisuals(false);
+            tutorialBox.SetActive(true);
+            graphicsPlayerArrow.SetActive(true);
+            TogglePossiblePlayerGoalsVisuals(false);
         }
         else if (levelNum == 1) {
-            // GameManager.visionPowerUp = true;
-            // graphicsPlayerArrow.SetActive(true);
+            GameManager.visionPowerUp = true;
+            graphicsPlayerArrow.SetActive(true);
         }
 
         // TESTING. ENDLESS MODE
@@ -198,6 +208,11 @@ public class GameManager : MonoBehaviour
     public void FinishedLevel() {
         Destroy(currentLevelInst);
         currentLevel += 1;
+        if(currentLevel == levels.Count) {
+            Time.timeScale = 0f;
+            endMenu.SetActive(true);
+            return;
+        }
         myPlayerHealth.PlayerRestoreAllHealth(); // to do, might remove
         levelEndEvent.Invoke();
         NewLevel(currentLevel);

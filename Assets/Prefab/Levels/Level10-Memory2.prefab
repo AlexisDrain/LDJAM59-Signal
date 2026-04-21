@@ -76,7 +76,7 @@ Transform:
   m_GameObject: {fileID: 3539278463265127651}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.915, y: 0, z: 0}
+  m_LocalPosition: {x: 0.41499996, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -176,7 +176,7 @@ Transform:
   m_GameObject: {fileID: 4520827606701576391}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.915, y: 0, z: 0}
+  m_LocalPosition: {x: -1.585, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -412,6 +412,7 @@ MonoBehaviour:
     1A 1B\r\n5C 5A 5B\r\n2A 2B 2C\n3B 3C 3A"
   tallLevel: 1
   tutorialDoubleJump: 0
+  removeColorGrid: 0
 --- !u!114 &7126534839774983969
 MonoBehaviour:
   m_ObjectHideFlags: 0
